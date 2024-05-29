@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         R.id.navigation_publishing,
         R.id.navigation_preference,
         R.id.navigation_profile,
-        R.id.navitagion_detail
+        R.id.navitagion_detail,
+        R.id.fragment_explore,
+        R.id.fragmentSearch
     )
 
     private lateinit var binding: ActivityMainBinding
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
         binding.navigationView.setupWithNavController(navController)
 
+
         //Configuro Comportamiento segun Fragmento
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
             //Esto es para configurar el Icono Fijo
@@ -70,7 +73,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_publishing,
                 R.id.navigation_preference,
                 R.id.navigation_profile,
-                R.id.navitagion_detail
+                R.id.navitagion_detail,
+                R.id.fragment_explore,
+                R.id.fragmentSearch,
                 -> {
                     navView.visibility = BottomNavigationView.VISIBLE
                     binding.contentMainInclude.customToolbar.visibility = MaterialToolbar.VISIBLE
@@ -80,9 +85,15 @@ class MainActivity : AppCompatActivity() {
                     binding.contentMainInclude.customToolbar.visibility = View.GONE
                 }
             }
+            //Para ciertas vistas seteo el icono fijo al hamburger
+            when (destination.id) {
+                R.id.fragment_explore,
+                R.id.navigation_preference
+                ->{
+                    supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburger)
+                }
+            }
         }
-
-
 
         binding.txtCloseApp.setOnClickListener(View.OnClickListener {
             finish()
