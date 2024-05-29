@@ -7,6 +7,21 @@
         android:title="@string/title_profile" />
 
     <item
+        android:id="@+id/navigation_notification"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_notification" />
+
+    <item
+        android:id="@+id/navigation_get_help"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_get_help" />
+
+    <item
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_calendar" />
+
+    <item
         android:id="@+id/navigation_preference"
         android:icon="@drawable/ic_setting_black_24dp"
         android:title="@string/title_setting" />

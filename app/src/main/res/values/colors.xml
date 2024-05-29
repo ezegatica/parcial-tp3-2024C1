@@ -8,6 +8,10 @@
     <color name="blue_800">#FF1B72C0</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="orange_primary">#F99A0E</color>
+    <color name="green_secondary">#32D4AD</color>
+    <color name="blue_accent">#1B72C0</color>
+    <color name="teal_hover">#10579B</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
