@@ -20,4 +20,7 @@
     <string name="dogs_api_base_url">https://dog.ceo/</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_flight">Flight</string>
+    <string name="button_search">Search</string>
+    <string name="button_view_details">View Details</string>
 </resources>

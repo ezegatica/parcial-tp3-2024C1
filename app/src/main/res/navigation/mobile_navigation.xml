@@ -11,10 +11,8 @@
         android:label="@string/title_intro"
         tools:layout="@layout/fragment_intro" >
         <action
-            android:id="@+id/action_navigation_intro_to_navigation_home"
-            app:destination="@id/navigation_home"
-            app:popUpTo="@id/navigation_intro"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_navigation_intro_to_fragment_explore"
+            app:destination="@id/fragment_explore" />
     </fragment>
 
     <fragment
@@ -63,5 +61,23 @@
         android:name="com.example.simulacros.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragment_explore"
+        android:name="com.example.simulacros.ui.explore.FragmentExplore"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_fragment_explore_to_fragmentSearch"
+            app:destination="@id/fragmentSearch" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="com.example.simulacros.ui.search.FragmentSearch"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_fragmentSearch_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 </navigation>
