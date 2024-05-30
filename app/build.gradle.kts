@@ -57,6 +57,7 @@ dependencies {
 
     //Ksp o kasp
     implementation(libs.com.google.devtools.ksp.gradle.plugin)
+    implementation(libs.gson)
 
     //Hilt & Dagger
     kapt(libs.hilt.android.compiler)

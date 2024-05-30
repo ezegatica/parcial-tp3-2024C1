@@ -14,6 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 import com.example.simulacros.core.Config
+import com.example.simulacros.data.network.FlightApiClient
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -42,5 +43,11 @@ object NetworkModule {
     @Provides
     fun provideDogApiClient(retrofit: Retrofit):DogApiClient{
         return retrofit.create(DogApiClient::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideFlightApiClient(retrofit: Retrofit):FlightApiClient{
+        return retrofit.create(FlightApiClient::class.java)
     }
 }

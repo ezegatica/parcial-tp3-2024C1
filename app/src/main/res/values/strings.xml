@@ -17,7 +17,7 @@
     <string name="preference_night_mode_key">night_mode_preference</string>
     <string name="close_app">Cerrar App</string>
     <string name="copyright">Martín</string>
-    <string name="dogs_api_base_url">https://dog.ceo/</string>
+    <string name="mock_api_base_url">https://d9811bf4-5e67-4a8c-bdcf-603cbbfc0275.mock.pstmn.io/</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_flight">Flight</string>
