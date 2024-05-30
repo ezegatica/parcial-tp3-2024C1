@@ -14,4 +14,6 @@
     <color name="teal_hover">#10579B</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grandient_blue_start">#10579B</color>
+    <color name="grandient_blue_end">#3AA4C8</color>
 </resources>
