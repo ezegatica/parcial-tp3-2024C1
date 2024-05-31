@@ -67,7 +67,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener {
             }
         }
 
-        val btnFlight: Button = binding.exploreFlightButton
+        val btnFlight: ImageButton = binding.exploreFlightButton
         btnFlight.setOnClickListener() {
             view.findNavController().navigate(FragmentExploreDirections.actionFragmentExploreToFragmentSearch())
         }

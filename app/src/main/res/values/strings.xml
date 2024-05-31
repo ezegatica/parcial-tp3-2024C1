@@ -25,4 +25,6 @@
     <string name="button_flight">Flight</string>
     <string name="button_search">Search</string>
     <string name="button_view_details">View Details</string>
+    <string name="likeButton">Like Button</string>
+
 </resources>

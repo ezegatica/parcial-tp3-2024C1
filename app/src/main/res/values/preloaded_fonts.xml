@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/baloo_bhai_2</item>
+        <item>@font/inter</item>
         <item>@font/inter_extralight</item>
         <item>@font/roboto</item>
     </array>

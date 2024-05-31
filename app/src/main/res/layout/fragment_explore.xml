@@ -20,6 +20,53 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_trending_destinations"
+                android:layout_width="379dp"
+                android:layout_height="118dp"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_offers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_constraintLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_constraintLayout"
+                android:layout_width="53dp"
+                android:layout_height="76dp"
+                app:layout_constraintBottom_toTopOf="@+id/recycler_offers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:layout_constraintVertical_bias="0.116">
+
+                <TextView
+                    android:id="@+id/flight_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/button_flight"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/explore_flight_button"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageButton
+                    android:id="@+id/explore_flight_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_square_button"
+                    android:contentDescription="@string/button_flight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/flight_logo" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_offers"
                 android:layout_width="376dp"
                 android:layout_height="194dp"
@@ -27,22 +74,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/explore_flight_button"
                 app:layout_constraintVertical_bias="0.891" />
-
-            <Button
-                android:id="@+id/explore_flight_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/button_flight"
-                android:translationX="20dp"
-                android:translationY="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.424"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView"
-                app:layout_constraintVertical_bias="0.111" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -117,6 +149,7 @@
                         android:background="@android:color/transparent"
                         android:scaleX="1.1"
                         android:scaleY="1.1"
+                        android:contentDescription="@string/likeButton"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.933"
@@ -129,6 +162,7 @@
 
 
             </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
