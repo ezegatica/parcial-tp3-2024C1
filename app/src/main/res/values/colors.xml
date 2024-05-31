@@ -16,4 +16,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grandient_blue_start">#10579B</color>
     <color name="grandient_blue_end">#3AA4C8</color>
+    <color name='gray_backgroud'>#F8F9FB</color>
+    <color name='gray_offer_text'>#999999</color>
 </resources>
