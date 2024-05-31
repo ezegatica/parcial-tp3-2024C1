@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
 
     private val fragmentsNavigation = setOf(
-        R.id.navigation_home,
+        R.id.navigation_search_result,
         R.id.navigation_favorites,
-        R.id.navigation_chat,
+        R.id.navigation_offers,
         R.id.navigation_publishing,
         R.id.navigation_preference,
         R.id.navigation_profile,
@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity() {
             //supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_bar_chart_black_24dp)
 
             when (destination.id) {
-                R.id.navigation_home,
+                R.id.navigation_search_result,
                 R.id.navigation_favorites,
-                R.id.navigation_chat,
+                R.id.navigation_offers,
                 R.id.navigation_publishing,
                 R.id.navigation_preference,
                 R.id.navigation_profile,

@@ -1,12 +1,9 @@
-package com.example.simulacros.ui.home
+package com.example.simulacros.ui.search_result
 
-import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.simulacros.data.DogRepository
-import com.example.simulacros.data.DogRepository_Factory
 import com.example.simulacros.data.FlightRepository
 import com.example.simulacros.data.database.entities.DogEntity
 import com.example.simulacros.domain.GetDogListUseCase
@@ -19,7 +16,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class SearchResultViewModel @Inject constructor(
     private val getDogListUseCase: GetDogListUseCase,
     private val repository: DogRepository,
     private val getFlightsUseCase: GetFlightsUseCase,

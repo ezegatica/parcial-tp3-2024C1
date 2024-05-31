@@ -8,11 +8,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import com.example.simulacros.R
 import com.example.simulacros.databinding.FragmentIntroBinding
-import com.example.simulacros.ui.home.HomeFragmentDirections
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

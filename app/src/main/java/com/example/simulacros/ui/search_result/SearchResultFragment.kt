@@ -1,4 +1,4 @@
-package com.example.simulacros.ui.home
+package com.example.simulacros.ui.search_result
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,14 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simulacros.adapters.DogListAdapter
-import com.example.simulacros.databinding.FragmentHomeBinding
+import com.example.simulacros.databinding.FragmentSearchResultBinding
 import com.example.simulacros.domain.model.Dog
 import com.example.simulacros.listener.OnViewItemClickedListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(), OnViewItemClickedListener {
-    private var _binding: FragmentHomeBinding? = null
+class SearchResultFragment : Fragment(), OnViewItemClickedListener {
+    private var _binding: FragmentSearchResultBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,9 +29,9 @@ class HomeFragment : Fragment(), OnViewItemClickedListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(SearchResultViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val recDogs = binding.recDogs
 
@@ -57,6 +57,6 @@ class HomeFragment : Fragment(), OnViewItemClickedListener {
     }
 
     override fun onViewItemDetail(dog: Dog){
-        view?.findNavController()?.navigate(HomeFragmentDirections.actionNavigationHomeToDetailFragment3(dog))
+        view?.findNavController()?.navigate(SearchResultFragmentDirections.actionNavigationHomeToDetailFragment3(dog))
     }
 }

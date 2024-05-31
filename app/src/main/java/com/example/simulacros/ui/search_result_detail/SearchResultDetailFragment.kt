@@ -1,4 +1,4 @@
-package com.example.simulacros.ui.detail
+package com.example.simulacros.ui.search_result_detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.simulacros.R
-import com.example.simulacros.databinding.FragmentDetailBinding
+import com.example.simulacros.databinding.FragmentSearchResultDetailBinding
 
-class DetailFragment : Fragment() {
+class SearchResultDetailFragment : Fragment() {
 
-    private var _binding: FragmentDetailBinding? = null
+    private var _binding: FragmentSearchResultDetailBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +24,12 @@ class DetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(SearchResultDetailViewModel::class.java)
 
-        _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentSearchResultDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        DetailFragmentArgs.fromBundle(requireArguments()).dog.let {
+        SearchResultDetailFragmentArgs.fromBundle(requireArguments()).dog.let {
             Glide.with(requireContext())
                 .load(it.image)
                 .centerCrop()
