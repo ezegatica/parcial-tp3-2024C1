@@ -21,8 +21,8 @@
         android:label="@string/title_search_results"
         tools:layout="@layout/fragment_search_result">
         <action
-            android:id="@+id/action_navigation_home_to_detailFragment3"
-            app:destination="@id/navitagion_detail" />
+            android:id="@+id/action_navigation_search_result_to_navigation_search_result_detail"
+            app:destination="@id/navigation_search_result_detail" />
     </fragment>
     <fragment
         android:id="@+id/navigation_favorites"
@@ -43,13 +43,13 @@
         tools:layout="@layout/fragment_publishing" />
 
     <fragment
-        android:id="@+id/navitagion_detail"
+        android:id="@+id/navigation_search_result_detail"
         android:name="com.example.simulacros.ui.search_result_detail.SearchResultDetailFragment"
         android:label="@string/title_detail"
         tools:layout="@layout/fragment_search_result_detail">
         <argument
-            android:name="dog"
-            app:argType="com.example.simulacros.domain.model.Dog" />
+            android:name="flight"
+            app:argType="com.example.simulacros.domain.model.Flight" />
     </fragment>
     <fragment
         android:id="@+id/navigation_preference"

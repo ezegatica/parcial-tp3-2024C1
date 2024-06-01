@@ -27,11 +27,11 @@ class SearchResultDetailFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(SearchResultDetailViewModel::class.java)
 
         _binding = FragmentSearchResultDetailBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View = binding.root;
 
-        SearchResultDetailFragmentArgs.fromBundle(requireArguments()).dog.let {
+        SearchResultDetailFragmentArgs.fromBundle(requireArguments()).flight.let {
             Glide.with(requireContext())
-                .load(it.image)
+                .load(it.airlineLogo)
                 .centerCrop()
                 .placeholder(R.drawable.progress_animation)
                 .into(binding.ivDogDetail);

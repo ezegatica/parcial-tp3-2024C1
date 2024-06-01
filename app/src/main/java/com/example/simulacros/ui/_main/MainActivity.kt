@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         R.id.navigation_publishing,
         R.id.navigation_preference,
         R.id.navigation_profile,
-        R.id.navitagion_detail,
+        R.id.navigation_search_result_detail,
         R.id.fragment_explore,
         R.id.fragmentSearch
     )
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_publishing,
                 R.id.navigation_preference,
                 R.id.navigation_profile,
-                R.id.navitagion_detail,
+                R.id.navigation_search_result_detail,
                 R.id.fragment_explore,
                 R.id.fragmentSearch,
                 -> {

@@ -1,6 +1,7 @@
 package com.example.simulacros.ui.search_result
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simulacros.adapters.FlightListAdapter
 import com.example.simulacros.databinding.FragmentSearchResultBinding
@@ -54,7 +56,9 @@ class SearchResultFragment : Fragment(), OnFlightItemClickedListener {
 
 
     override fun onFlightItemDetail(flight: Flight) {
-        TODO("Not yet implemented")
+        Log.i("FLIGHT clicked", flight.toString())
+        val action = SearchResultFragmentDirections.actionNavigationSearchResultToNavigationSearchResultDetail(flight);
+        view?.findNavController()?.navigate(action);
     }
 
 }
