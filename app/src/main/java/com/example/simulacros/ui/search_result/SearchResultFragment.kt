@@ -8,46 +8,42 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.simulacros.adapters.DogListAdapter
+import com.example.simulacros.adapters.FlightListAdapter
 import com.example.simulacros.databinding.FragmentSearchResultBinding
-import com.example.simulacros.domain.model.Dog
-import com.example.simulacros.listener.OnViewItemClickedListener
+import com.example.simulacros.domain.model.Flight
+import com.example.simulacros.listener.OnFlightItemClickedListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SearchResultFragment : Fragment(), OnViewItemClickedListener {
+class SearchResultFragment : Fragment(), OnFlightItemClickedListener {
+
     private var _binding: FragmentSearchResultBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         val viewModel = ViewModelProvider(this).get(SearchResultViewModel::class.java)
 
         _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        val recDogs = binding.recDogs
 
+        val root: View = binding.root
+        val recFlight = binding.recFlights
         viewModel.isLoading.observe(viewLifecycleOwner, Observer {
             binding.loading.isVisible = it
         })
+        viewModel.listFlight.observe(viewLifecycleOwner, Observer {
+            recFlight.adapter = FlightListAdapter((it ?: listOf()),this)
 
-        viewModel.listDog.observe(viewLifecycleOwner, Observer {
-            recDogs.adapter = DogListAdapter(it ?: listOf(), this)
         })
-
-        var dogsListAdapter = DogListAdapter(listOf(), this)
-        recDogs.setHasFixedSize(true)
-        recDogs.layoutManager = LinearLayoutManager(context)
-        recDogs.adapter = dogsListAdapter
-
+        var flightListAdapter = FlightListAdapter(listOf(), this)
+        recFlight.setHasFixedSize(true)
+        recFlight.layoutManager = LinearLayoutManager(context)
+        recFlight.adapter = flightListAdapter
         return root
     }
 
@@ -56,7 +52,9 @@ class SearchResultFragment : Fragment(), OnViewItemClickedListener {
         _binding = null
     }
 
-    override fun onViewItemDetail(dog: Dog){
-        view?.findNavController()?.navigate(SearchResultFragmentDirections.actionNavigationHomeToDetailFragment3(dog))
+
+    override fun onFlightItemDetail(flight: Flight) {
+        TODO("Not yet implemented")
     }
+
 }

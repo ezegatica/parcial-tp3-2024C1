@@ -1,14 +1,10 @@
 package com.example.simulacros.ui.search_result
-
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.simulacros.data.DogRepository
 import com.example.simulacros.data.FlightRepository
-import com.example.simulacros.data.database.entities.DogEntity
-import com.example.simulacros.domain.GetDogListUseCase
+import com.example.simulacros.data.model.BestFlight
 import com.example.simulacros.domain.GetFlightsUseCase
-import com.example.simulacros.domain.model.Dog
+import com.example.simulacros.domain.model.Flight
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,36 +13,49 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SearchResultViewModel @Inject constructor(
-    private val getDogListUseCase: GetDogListUseCase,
-    private val repository: DogRepository,
     private val getFlightsUseCase: GetFlightsUseCase,
     private val flightRepository: FlightRepository
 ) : ViewModel() {
 
-    var listDog = MutableLiveData<List<Dog>?>()
     val isLoading = MutableLiveData<Boolean>()
+    var listFlight = MutableLiveData<List<Flight>?>()
+
 
     init {
-        addDogsToList()
+        addFlightsToList()
     }
 
-    fun addDogsToList() {
+    fun addFlightsToList() {
         CoroutineScope(Dispatchers.Main).launch {
             isLoading.postValue(true)
 
-                val dogs = ArrayList<DogEntity>()
-                dogs.add(DogEntity(0, "test", "test", "test", 10, "https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
-                dogs.add(DogEntity(0, "test 1", "test 1", "test 1", 5, "https://images.dog.ceo/breeds/akita/512px-Akita_inu.jpg"))
-                dogs.add(DogEntity(0, "test 2", "test 2", "test 2", 3, "https://images.dog.ceo/breeds/akita/Akina_Inu_in_Riga_1.jpg"))
-                repository.insertDogs(dogs.toList())
-                val result = repository.getAllDogsFromDatabase()
-            val result2 = getFlightsUseCase()
+            val result = getFlightsUseCase()
+            val bestFlights = result?.bestFlights
 
-            Log.e("Flights", result2.toString())
-            Log.i("Flight2s", "holaa")
-
-            listDog.postValue(result)
+            listFlight.postValue( extractFlights(bestFlights));
             isLoading.postValue(false)
         }
+    }
+
+    fun extractFlights(bestFlights: List<BestFlight>?): List<Flight> {
+        val flights = mutableListOf<Flight>()
+        bestFlights?.forEach { bestFlight ->
+            val firstFlight = bestFlight.flights.firstOrNull()
+            val lastFlight = bestFlight.flights.lastOrNull()
+
+            if (firstFlight != null && lastFlight != null) {
+                val flight = Flight(
+                    airline = firstFlight.airline.toString(),
+                    airlineLogo = firstFlight.airlineLogo.toString(),
+                    totalDuration = bestFlight.totalDuration.toString().toIntOrNull() ?: 0,
+                    departureAirportName = firstFlight.departureAirport?.name ?: "",
+                    departureAirportId = firstFlight.departureAirport?.id?.toString() ?: "",
+                    arrivalAirportName = lastFlight.arrivalAirport?.name ?: "",
+                    arrivalAirportId = lastFlight.arrivalAirport?.id?.toString() ?: ""
+                )
+                flights.add(flight)
+            }
+        }
+        return flights
     }
 }
