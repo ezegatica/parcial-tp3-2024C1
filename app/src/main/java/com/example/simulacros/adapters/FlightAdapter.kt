@@ -26,14 +26,19 @@ class FlightListAdapter(
     override fun onBindViewHolder(holder: FlightHolder, position: Int) {
         val flight = flightList[position]
         holder.setAirline(flight.airline)
-        holder.setTotalDuration(flight.totalDuration)
+        holder.setTotalDuration((flight.totalDuration/60).toString() + " h " + flight.totalDuration%60 + " m")
+        holder.setDepartureAirportName(flight.departureAirportName)
+        holder.setDepartureAirportId(flight.departureAirportId)
+        holder.setArrivalAirportName(flight.arrivalAirportName)
+        holder.setArrivalAirportId(flight.arrivalAirportId)
+        holder.setPrice(flight.price)
 
         Glide.with(holder.itemView.context)
             .load(flight.airlineLogo)
             .centerCrop()
             .into(holder.getImage());
 
-        holder.getCardLayout().setOnClickListener{
+        holder.getButton().setOnClickListener{
             onItemClick.onFlightItemDetail(flight)
         }
 

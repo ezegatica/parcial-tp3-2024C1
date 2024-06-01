@@ -51,7 +51,8 @@ class SearchResultViewModel @Inject constructor(
                     departureAirportName = firstFlight.departureAirport.name,
                     departureAirportId = firstFlight.departureAirport.id,
                     arrivalAirportName = lastFlight.arrivalAirport.name,
-                    arrivalAirportId = lastFlight.arrivalAirport.id
+                    arrivalAirportId = lastFlight.arrivalAirport.id,
+                    price = bestFlight.price
                 )
                 flights.add(flight)
             }

@@ -11,6 +11,7 @@ data class Flight(
     var departureAirportId: String,
     var arrivalAirportName: String,
     var arrivalAirportId: String,
+    var price:  Int
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
@@ -20,6 +21,7 @@ data class Flight(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString(),
+        parcel.readInt()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -30,6 +32,7 @@ data class Flight(
         parcel.writeString(departureAirportId)
         parcel.writeString(arrivalAirportName)
         parcel.writeString(arrivalAirportId)
+        parcel.writeInt(price)
     }
 
     override fun describeContents(): Int {
