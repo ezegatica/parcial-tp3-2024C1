@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        loadPreferences();
+        loadPreferences()
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -104,15 +104,15 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
-        return true;
+        return true
     }
 
     private fun loadPreferences() {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         if (prefs.getBoolean(getString(R.string.preference_night_mode_key), false)) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }
 }
