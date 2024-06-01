@@ -32,7 +32,7 @@ class SearchResultViewModel @Inject constructor(
             val result = getFlightsUseCase()
             val bestFlights = result?.bestFlights
 
-            listFlight.postValue( extractFlights(bestFlights));
+            listFlight.postValue( extractFlights(bestFlights))
             isLoading.postValue(false)
         }
     }
@@ -45,13 +45,13 @@ class SearchResultViewModel @Inject constructor(
 
             if (firstFlight != null && lastFlight != null) {
                 val flight = Flight(
-                    airline = firstFlight.airline.toString(),
-                    airlineLogo = firstFlight.airlineLogo.toString(),
+                    airline = firstFlight.airline,
+                    airlineLogo = firstFlight.airlineLogo,
                     totalDuration = bestFlight.totalDuration.toString().toIntOrNull() ?: 0,
-                    departureAirportName = firstFlight.departureAirport?.name ?: "",
-                    departureAirportId = firstFlight.departureAirport?.id?.toString() ?: "",
-                    arrivalAirportName = lastFlight.arrivalAirport?.name ?: "",
-                    arrivalAirportId = lastFlight.arrivalAirport?.id?.toString() ?: ""
+                    departureAirportName = firstFlight.departureAirport.name,
+                    departureAirportId = firstFlight.departureAirport.id,
+                    arrivalAirportName = lastFlight.arrivalAirport.name,
+                    arrivalAirportId = lastFlight.arrivalAirport.id
                 )
                 flights.add(flight)
             }
