@@ -17,7 +17,7 @@
     <string name="preference_category">General</string>
     <string name="preference_night_mode">Modo Oscuro</string>
     <string name="preference_night_mode_key">night_mode_preference</string>
-    <string name="close_app">Cerrar App</string>
+    <string name="version">App version 1.0.0</string>
     <string name="copyright">Martín</string>
     <string name="mock_api_base_url">https://d9811bf4-5e67-4a8c-bdcf-603cbbfc0275.mock.pstmn.io/</string>
     <!-- TODO: Remove or change this placeholder text -->

@@ -22,5 +22,6 @@
     <color name='destination_code_container'>#F8F9FB</color>
     <color name='destination_code_text'>#4D5760</color>
     <color name='see_all_text'>#1262AE</color>
+    <color name='opacity_20_cardview'>#33000000</color>
 
 </resources>

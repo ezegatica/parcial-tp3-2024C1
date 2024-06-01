@@ -49,13 +49,15 @@
         app:menu="@menu/left_nav_menu">
 
         <TextView
+            android:id="@+id/version"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="bottom"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="-40dp"
-            android:id="@+id/txt_close_app"
-            android:gravity="center"
-            android:text="@string/close_app" />
+            android:fontFamily="@font/roboto"
+            android:gravity="left|center"
+            android:text="@string/version" />
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

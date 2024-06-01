@@ -94,10 +94,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-        binding.txtCloseApp.setOnClickListener(View.OnClickListener {
-            finish()
-        })
         loadPreferences();
     }
 
