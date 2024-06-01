@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_backgroud">
@@ -27,8 +26,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/offer_constraintLayout"
-                android:layout_width="388dp"
-                android:layout_height="127dp"
+                android:layout_width="392dp"
+                android:layout_height="142dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -76,7 +75,7 @@
                     android:id="@+id/see_all_trending_destination"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/inter_extralight"
+                    android:fontFamily="@font/inter"
                     android:text="@string/see_all_trending_destinations"
                     android:textColor="@color/see_all_text"
                     app:layout_constraintBottom_toTopOf="@+id/recycler_trending_destinations"
@@ -118,6 +117,7 @@
                 android:id="@+id/button_constraintLayout"
                 android:layout_width="53dp"
                 android:layout_height="76dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerOffer_constraintLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
@@ -156,8 +156,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="370dp"
+                android:layout_height="184dp"
                 android:layout_marginTop="10dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -168,7 +168,7 @@
                     android:id="@+id/cardImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="paris"
+                    android:contentDescription="@string/paris"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/paris" />
 
@@ -181,7 +181,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/baloo_bhai_2"
-                        android:text="Paris"
+                        android:text="@string/paris"
                         android:textColor="@color/white"
                         android:textSize="28sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -196,21 +196,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/baloo_bhai_2"
-                        android:text="$1299"
+                        android:text="@string/priceParis"
                         android:textColor="@color/white"
                         android:textSize="32sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.919"
+                        app:layout_constraintHorizontal_bias="0.926"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.896" />
+                        app:layout_constraintVertical_bias="0.932" />
 
                     <TextView
                         android:id="@+id/textFrom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="FROM"
+                        android:text="@string/fromCardText"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"

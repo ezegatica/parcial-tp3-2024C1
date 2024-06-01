@@ -20,8 +20,15 @@ class OfferHolder (v: View) : RecyclerView.ViewHolder(v) {
         text.text = title
     }
 
-    fun setDescription(description: String){
+    fun setDescription(description: String?){
         val text: TextView = view.findViewById(R.id.description_text)
+        if (description != null) {
+            text.text = description
+            text.visibility = View.VISIBLE
+        } else {
+            text.text = ""
+            text.visibility = View.GONE
+        }
         text.text = description
     }
 

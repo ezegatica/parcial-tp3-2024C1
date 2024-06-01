@@ -28,6 +28,10 @@
     <string name="likeButton">Like Button</string>
     <string name="title_trending_destinations">Trending Destinations</string>
     <string name="see_all_trending_destinations">See all</string>
+    <string name="paris">Paris</string>
+    <string name="priceParis">$1299</string>
+    <string name="fromCardText">FROM</string>
+    <string name="limited_time_offer">Limited time offer!</string>
 
 
 </resources>

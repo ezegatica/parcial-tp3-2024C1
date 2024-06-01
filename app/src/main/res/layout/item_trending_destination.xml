@@ -35,20 +35,31 @@
                 app:layout_constraintVertical_bias="0.202"
                 app:srcCompat="@drawable/loading" />
 
-            <TextView
-                android:id="@+id/trend_dest_code"
-                android:layout_width="53dp"
-                android:layout_height="23dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="52dp"
+                android:layout_height="22dp"
                 android:background="@drawable/rounded_square_destination_code"
-                android:fontFamily="@font/inter"
-                android:text="Codigo"
-                android:textColor="@color/destination_code_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.917"
+                app:layout_constraintHorizontal_bias="0.918"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/trend_dest_img"
-                app:layout_constraintVertical_bias="0.483" />
+                app:layout_constraintVertical_bias="0.468"
+                >
+
+                <TextView
+                    android:id="@+id/trend_dest_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="Codigo"
+                    android:gravity="center"
+                    android:textColor="@color/destination_code_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/trend_destination"

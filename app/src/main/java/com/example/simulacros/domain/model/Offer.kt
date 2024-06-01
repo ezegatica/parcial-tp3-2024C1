@@ -3,7 +3,11 @@ package com.example.simulacros.domain.model
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Offer(var title: String, var description: String, var image: Int): Parcelable {
+data class Offer(
+    var title: String,
+    var description: String? = null,
+    var image: Int
+): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString().toString(),
         parcel.readString().toString(),

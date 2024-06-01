@@ -19,7 +19,7 @@
     <color name='grey_backgroud'>#F8F9FB</color>
     <color name='grey_offer_text'>#999999</color>
     <color name='flight_button'>#5443CB</color>
-    <color name='destination_code_container'>#F4F5F6</color>
+    <color name='destination_code_container'>#F8F9FB</color>
     <color name='destination_code_text'>#4D5760</color>
     <color name='see_all_text'>#1262AE</color>
 
