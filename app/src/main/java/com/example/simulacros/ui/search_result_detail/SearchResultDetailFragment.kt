@@ -34,7 +34,7 @@ class SearchResultDetailFragment : Fragment() {
                 .load(it.airlineLogo)
                 .centerCrop()
                 .placeholder(R.drawable.progress_animation)
-                .into(binding.ivDogDetail);
+                .into(binding.ivDogDetail1);
 
         }
 
