@@ -9,7 +9,6 @@
         <SwitchPreference
             android:defaultValue="false"
             android:key="night_mode_preference"
-            app:summary="Cambiar entre el modo claro y el modo oscuro"
             android:title="@string/preference_night_mode" />
     </PreferenceCategory>
 

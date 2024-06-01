@@ -14,4 +14,5 @@
         <!-- Customize your theme here. -->
         <item name="customBarBackgroundColor">@color/black</item>
     </style>
+    <color name="primaryColor">#FFFFFFFF</color>
 </resources>

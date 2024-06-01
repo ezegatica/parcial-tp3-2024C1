@@ -6,7 +6,7 @@
     <string name="title_person">Profile</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_profile">Profile</string>
-    <string name="title_setting">Configuración</string>
+    <string name="title_setting">Configuration</string>
     <string name="title_notification">Notification</string>
     <string name="title_search">Search</string>
     <string name="title_search_results">Search results</string>
@@ -14,7 +14,7 @@
     <string name="title_calendar">Calendar</string>
     <string name="title_detail">Info Detalle</string>
     <string name="title_intro">Intro</string>
-    <string name="preference_category">General</string>
+    <string name="preference_category">Generales</string>
     <string name="preference_night_mode">Modo Oscuro</string>
     <string name="preference_night_mode_key">night_mode_preference</string>
     <string name="version">App version 1.0.0</string>
