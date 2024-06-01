@@ -1,6 +1,5 @@
 package com.example.simulacros.holders
 
-import android.text.Html
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView

@@ -2,17 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@color/gray_backgroud">
+    android:background="@color/grey_backgroud">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_offer_card"
-        android:layout_width="325dp"
-        android:layout_height="135dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="262dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,21 +31,21 @@
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.633"
+                app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.879" />
+                app:layout_constraintVertical_bias="0.987" />
 
             <TextView
                 android:id="@+id/title_text"
-                android:layout_width="174dp"
-                android:layout_height="42dp"
+                android:layout_width="130dp"
+                android:layout_height="37dp"
                 android:fontFamily="@font/roboto"
                 android:maxLines="2"
                 android:text="Title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintHorizontal_bias="0.384"
                 app:layout_constraintStart_toEndOf="@+id/offer_img"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.333" />
@@ -57,11 +56,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="Limited time offer!"
-                android:textColor="@color/gray_offer_text"
+                android:textColor="@color/grey_offer_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.622"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/offer_img"
                 app:layout_constraintTop_toBottomOf="@+id/title_text"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -69,6 +68,7 @@
                 android:id="@+id/offer_img"
                 android:layout_width="87dp"
                 android:layout_height="57dp"
+                android:contentDescription="Imagen de Oferta"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.109"

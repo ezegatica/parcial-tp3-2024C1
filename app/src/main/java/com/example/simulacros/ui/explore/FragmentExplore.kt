@@ -18,16 +18,24 @@ import com.example.simulacros.domain.model.Offer
 import com.example.simulacros.listener.OnOfferItemClickedListener
 import androidx.lifecycle.Observer
 import com.example.simulacros.R
+import com.example.simulacros.adapters.TrendingDestinationAdapter
+import com.example.simulacros.domain.model.TrendingDestination
+import com.example.simulacros.listener.OnTrendingDestinationClickedListener
 
-class FragmentExplore : Fragment(), OnOfferItemClickedListener {
+class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestinationClickedListener {
     private var _binding: FragmentExploreBinding? = null
     private val binding get() = _binding!!
     private val viewModel: ExploreViewModel by viewModels()
 
-    lateinit var recyclerOffers: RecyclerView
-    private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var offerAdapter: OfferAdapter
     private var isLiked = false
+
+    private lateinit var linearLayoutManagerOffer: LinearLayoutManager
+    private lateinit var linearLayoutManagerTrendingDestination: LinearLayoutManager
+    lateinit var recyclerOffers: RecyclerView
+    lateinit var recyclerTrendingDestination: RecyclerView
+    private lateinit var offerAdapter: OfferAdapter
+    private lateinit var trendingDestinationAdapter: TrendingDestinationAdapter
+
     companion object {
         fun newInstance() = FragmentExplore()
     }
@@ -46,17 +54,29 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        linearLayoutManagerOffer = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        linearLayoutManagerTrendingDestination = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
 
+        //Recycler Offer
         recyclerOffers = binding.recyclerOffers
         recyclerOffers.setHasFixedSize(true)
-        linearLayoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        recyclerOffers.layoutManager = linearLayoutManager
+        recyclerOffers.layoutManager = linearLayoutManagerOffer
 
         viewModel.offers.observe(viewLifecycleOwner, Observer { offers ->
             offerAdapter = OfferAdapter(offers, this)
             recyclerOffers.adapter = offerAdapter
         })
 
+        //Recycler Trending Destination
+        recyclerTrendingDestination = binding.recyclerTrendingDestinations
+        recyclerTrendingDestination.setHasFixedSize(true)
+        recyclerTrendingDestination.layoutManager = linearLayoutManagerTrendingDestination
+        viewModel.trendingDestinations.observe(viewLifecycleOwner, Observer { trendingDestination ->
+            trendingDestinationAdapter = TrendingDestinationAdapter(trendingDestination,this)
+            recyclerTrendingDestination.adapter = trendingDestinationAdapter
+        })
+
+        //Logica de Like Button
         val btnLike: ImageButton = binding.likeButton
         btnLike.setOnClickListener(){
             isLiked = !isLiked
@@ -67,6 +87,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener {
             }
         }
 
+        //Logica de Flight Button
         val btnFlight: ImageButton = binding.exploreFlightButton
         btnFlight.setOnClickListener() {
             view.findNavController().navigate(FragmentExploreDirections.actionFragmentExploreToFragmentSearch())
@@ -79,6 +100,10 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener {
         _binding = null
     }
     override fun onOfferItemDetail(offer: Offer) {
+        //NO HACE NADA
+    }
+
+    override fun onTrendingDestinationItemDetail(trendingDestination: TrendingDestination) {
         //NO HACE NADA
     }
 
