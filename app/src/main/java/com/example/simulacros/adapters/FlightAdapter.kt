@@ -3,6 +3,7 @@ package com.example.simulacros.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.simulacros.R
 import com.example.simulacros.domain.model.Flight
 import com.example.simulacros.holders.FlightHolder
@@ -25,8 +26,12 @@ class FlightListAdapter(
     override fun onBindViewHolder(holder: FlightHolder, position: Int) {
         val flight = flightList[position]
         holder.setAirline(flight.airline)
-        holder.setAirlineLogo(flight.airlineLogo)
         holder.setTotalDuration(flight.totalDuration)
+
+        Glide.with(holder.itemView.context)
+            .load(flight.airlineLogo)
+            .centerCrop()
+            .into(holder.getImage());
 
         holder.getCardLayout().setOnClickListener{
             onItemClick.onFlightItemDetail(flight)

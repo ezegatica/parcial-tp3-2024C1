@@ -17,45 +17,191 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_airline_info_container"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/texto1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="logo"
-                android:layout_marginTop="20dp"
+
+            <ImageView
+                android:id="@+id/card_airline_logo"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-<!--            -->
+
 
             <TextView
-                android:id="@+id/texto2"
+                android:id="@+id/card_airline_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="airline"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@+id/card_airline_logo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/card_duration_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/card_duration"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/card_time_logo"/>
+
+            <TextView
+                android:id="@+id/card_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="duration"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_airport_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/card_airline_info_container">
+
+            <TextView
+                android:id="@+id/card_airport_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                app:layout_constraintStart_toEndOf="@+id/texto1"
+                android:layout_marginTop="10dp"
+                android:text="EZE"
+                android:textColor="@color/blue_800"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/card_airport_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:text="Ezeiza Ar"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/card_airport_id"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <ImageView
+                android:id="@+id/card_travel_logo"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/card_travel_logo"
+                app:layout_constraintStart_toEndOf="@id/card_airport_id"
+                app:layout_constraintTop_toTopOf="@id/card_airport_id" />
+
+            <TextView
+                android:id="@+id/card_airport_id_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="LAX"
+                android:textColor="@color/blue_800"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/card_airport_name_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="20dp"
+                android:text="Los Angeles"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_airport_id_right" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/destination_code_container"
+            app:layout_constraintTop_toBottomOf="@id/card_airport_info_container">
+
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:background="@drawable/line" />-->
+
+            <ImageView
+                android:id="@+id/card_sofa_logo"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="14dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/card_sofa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+              />
+
+            <TextView
+                android:id="@+id/card_flight_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:text="Business Class"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/card_sofa_logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/texto3"
+                android:id="@+id/card_flight_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="duration"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="14dp"
+                android:text="$1420"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="5dp"
+                android:text="From"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/card_flight_price"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/orange_primary"
+            android:text="View Details"/>
+
     </LinearLayout>
+
+
+
 
 </androidx.cardview.widget.CardView>

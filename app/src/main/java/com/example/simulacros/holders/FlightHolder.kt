@@ -1,6 +1,7 @@
 package com.example.simulacros.holders
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,18 +14,17 @@ class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
         this.view = v
     }
     fun setAirline(airline: String) {
-        val txt: TextView = view.findViewById(R.id.texto1)
+        val txt: TextView = view.findViewById(R.id.card_airline_name)
         txt.text = airline
     }
     fun getCardLayout (): CardView {
         return view.findViewById(R.id.flightCard)
     }
-    fun setAirlineLogo(airlineLogo: String) {
-        val txt: TextView = view.findViewById(R.id.texto2)
-        txt.text = airlineLogo
+    fun getImage(): ImageView {
+        return view.findViewById(R.id.card_airline_logo)
     }
     fun setTotalDuration(totalDuration: Int) {
-        val txt: TextView = view.findViewById(R.id.texto3)
+        val txt: TextView = view.findViewById(R.id.card_duration)
         txt.text = totalDuration.toString()
     }
 }
