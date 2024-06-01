@@ -1,20 +1,18 @@
 //Dependency Injection
 package com.example.simulacros.di
 
+import com.example.simulacros.core.Config
 import com.example.simulacros.core.InterceptorCustom
-import com.example.simulacros.data.network.DogApiClient
+import com.example.simulacros.data.network.FlightApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-import com.example.simulacros.core.Config
-import com.example.simulacros.data.network.FlightApiClient
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -37,12 +35,6 @@ object NetworkModule {
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
-
-    @Singleton
-    @Provides
-    fun provideDogApiClient(retrofit: Retrofit):DogApiClient{
-        return retrofit.create(DogApiClient::class.java)
     }
 
     @Singleton

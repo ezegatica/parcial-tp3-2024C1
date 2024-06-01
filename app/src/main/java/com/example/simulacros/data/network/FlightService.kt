@@ -1,6 +1,5 @@
 package com.example.simulacros.data.network
 
-import com.example.simulacros.data.model.DogModel
 import com.example.simulacros.data.model.FlightResponseModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

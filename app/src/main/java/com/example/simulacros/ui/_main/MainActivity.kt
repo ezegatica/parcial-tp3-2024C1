@@ -25,9 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private val fragmentsNavigation = setOf(
         R.id.navigation_search_result,
-        R.id.navigation_favorites,
         R.id.navigation_offers,
-        R.id.navigation_publishing,
         R.id.navigation_preference,
         R.id.navigation_profile,
         R.id.navigation_search_result_detail,
@@ -68,9 +66,7 @@ class MainActivity : AppCompatActivity() {
 
             when (destination.id) {
                 R.id.navigation_search_result,
-                R.id.navigation_favorites,
                 R.id.navigation_offers,
-                R.id.navigation_publishing,
                 R.id.navigation_preference,
                 R.id.navigation_profile,
                 R.id.navigation_search_result_detail,

@@ -9,14 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.example.simulacros.R
-import com.example.simulacros.databinding.FragmentIntroBinding
 import com.example.simulacros.databinding.FragmentSearchBinding
-import com.example.simulacros.ui.intro.IntroFragment
-import com.example.simulacros.ui.intro.IntroFragmentDirections
-import com.example.simulacros.ui.intro.IntroViewModel
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class FragmentSearch : Fragment() {

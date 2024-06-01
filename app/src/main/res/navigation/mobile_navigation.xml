@@ -6,16 +6,6 @@
     app:startDestination="@id/fragment_explore">
 
     <fragment
-        android:id="@+id/navigation_intro"
-        android:name="com.example.simulacros.ui.intro.IntroFragment"
-        android:label="@string/title_intro"
-        tools:layout="@layout/fragment_intro" >
-        <action
-            android:id="@+id/action_navigation_intro_to_fragment_explore"
-            app:destination="@id/fragment_explore" />
-    </fragment>
-
-    <fragment
         android:id="@+id/navigation_search_result"
         android:name="com.example.simulacros.ui.search_result.SearchResultFragment"
         android:label="@string/title_search_results"
@@ -24,23 +14,12 @@
             android:id="@+id/action_navigation_search_result_to_navigation_search_result_detail"
             app:destination="@id/navigation_search_result_detail" />
     </fragment>
-    <fragment
-        android:id="@+id/navigation_favorites"
-        android:name="com.example.simulacros.ui.dashboard.DashboardFragment"
-        android:label="@string/title_favorites"
-        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_offers"
         android:name="com.example.simulacros.ui.offers.OffersFragment"
         android:label="@string/title_offers"
         tools:layout="@layout/fragment_offers" />
-
-    <fragment
-        android:id="@+id/navigation_publishing"
-        android:name="com.example.simulacros.ui.publishing.PublishingFragment"
-        android:label="@string/title_person"
-        tools:layout="@layout/fragment_publishing" />
 
     <fragment
         android:id="@+id/navigation_search_result_detail"
