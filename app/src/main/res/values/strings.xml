@@ -26,5 +26,8 @@
     <string name="button_search">Search</string>
     <string name="button_view_details">View Details</string>
     <string name="likeButton">Like Button</string>
+    <string name="title_trending_destinations">Trending Destinations</string>
+    <string name="see_all_trending_destinations">See all</string>
+
 
 </resources>

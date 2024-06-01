@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/grey_backgroud">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/trending_destination_card"
+        android:layout_width="174dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/trend_dest_img"
+                android:layout_width="150dp"
+                android:layout_height="76dp"
+                android:contentDescription="Imagen de Trending Destination"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.58"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.202"
+                app:srcCompat="@drawable/loading" />
+
+            <TextView
+                android:id="@+id/trend_dest_code"
+                android:layout_width="53dp"
+                android:layout_height="23dp"
+                android:background="@drawable/rounded_square_destination_code"
+                android:fontFamily="@font/inter"
+                android:text="Codigo"
+                android:textColor="@color/destination_code_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.917"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trend_dest_img"
+                app:layout_constraintVertical_bias="0.483" />
+
+            <TextView
+                android:id="@+id/trend_destination"
+                android:layout_width="94dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/inter"
+                android:text="Destino"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.74" />
+
+            <TextView
+                android:id="@+id/trend_dest_pais"
+                android:layout_width="91dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/inter_extralight"
+                android:text="Pais"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.168"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trend_destination"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
