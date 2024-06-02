@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -81,7 +80,8 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         //Logica de Like Button
         val btnLike: ImageButton = binding.likeButton
         btnLike.setOnClickListener(){
-            updateLikeButton(btnLike,!isLiked)
+            isLiked = !isLiked
+            updateLikeButton(btnLike,isLiked)
         }
 
         //Logica de Flight Button
