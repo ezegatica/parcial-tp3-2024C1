@@ -1,10 +1,10 @@
 package com.example.simulacros.ui.explore
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -30,10 +30,11 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
     private var isLiked = false
 
     private lateinit var linearLayoutManagerOffer: LinearLayoutManager
-    private lateinit var linearLayoutManagerTrendingDestination: LinearLayoutManager
     lateinit var recyclerOffers: RecyclerView
-    lateinit var recyclerTrendingDestination: RecyclerView
     private lateinit var offerAdapter: OfferAdapter
+
+    private lateinit var linearLayoutManagerTrendingDestination: LinearLayoutManager
+    lateinit var recyclerTrendingDestination: RecyclerView
     private lateinit var trendingDestinationAdapter: TrendingDestinationAdapter
 
     companion object {
@@ -49,6 +50,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         _binding = FragmentExploreBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+
         return root
     }
 
@@ -56,6 +58,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         super.onViewCreated(view, savedInstanceState)
         linearLayoutManagerOffer = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         linearLayoutManagerTrendingDestination = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+
 
         //Recycler Offer
         recyclerOffers = binding.recyclerOffers
@@ -71,6 +74,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         recyclerTrendingDestination = binding.recyclerTrendingDestinations
         recyclerTrendingDestination.setHasFixedSize(true)
         recyclerTrendingDestination.layoutManager = linearLayoutManagerTrendingDestination
+
         viewModel.trendingDestinations.observe(viewLifecycleOwner, Observer { trendingDestination ->
             trendingDestinationAdapter = TrendingDestinationAdapter(trendingDestination,this)
             recyclerTrendingDestination.adapter = trendingDestinationAdapter
@@ -79,12 +83,7 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         //Logica de Like Button
         val btnLike: ImageButton = binding.likeButton
         btnLike.setOnClickListener(){
-            isLiked = !isLiked
-            if(isLiked){
-                btnLike.setImageResource(R.drawable.liked_logo)
-            }else{
-                btnLike.setImageResource(R.drawable.like_logo)
-            }
+            updateLikeButton(btnLike,!isLiked)
         }
 
         //Logica de Flight Button
@@ -105,6 +104,14 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
 
     override fun onTrendingDestinationItemDetail(trendingDestination: TrendingDestination) {
         //NO HACE NADA
+    }
+
+    private fun updateLikeButton(button: ImageButton, isLiked: Boolean) {
+        if (isLiked) {
+            button.setImageResource(R.drawable.liked_logo)
+        } else {
+            button.setImageResource(R.drawable.like_logo)
+        }
     }
 
 }
