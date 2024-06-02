@@ -28,4 +28,9 @@
 
     <color name="primaryColor">#FF000000</color>
 
+    <color name="buttonPillOn">#1262AE</color>
+    <color name="buttonPillOff">#F3F5F9</color>
+    <color name="colorTextOff">#9EAAB6</color>
+    <color name="limited_offer_container">#32D4AD</color>
+
 </resources>
