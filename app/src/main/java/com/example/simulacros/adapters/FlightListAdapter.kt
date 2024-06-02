@@ -36,7 +36,7 @@ class FlightListAdapter(
         Glide.with(holder.itemView.context)
             .load(flight.airlineLogo)
             .centerCrop()
-            .into(holder.getImage());
+            .into(holder.getImage())
 
         holder.getButton().setOnClickListener{
             onItemClick.onFlightItemDetail(flight)
