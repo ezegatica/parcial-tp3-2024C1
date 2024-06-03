@@ -23,6 +23,12 @@ class ExploreViewModel: ViewModel()  {
             TrendingDestination("Palawan","Philippines","3D2N",R.drawable.palawan)
         )}
 
+    private val _isLiked = MutableLiveData<Boolean>().apply { value = false }
+
     val offers: LiveData<List<Offer>> = _offers
     val trendingDestinations: LiveData<List<TrendingDestination>> = _trendingDestinations
+    val isLiked: LiveData<Boolean> = _isLiked
+    fun setLiked(liked: Boolean) {
+        _isLiked.value = liked
+    }
 }

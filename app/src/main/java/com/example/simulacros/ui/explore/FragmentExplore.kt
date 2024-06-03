@@ -26,8 +26,6 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
     private val binding get() = _binding!!
     private val viewModel: ExploreViewModel by viewModels()
 
-    private var isLiked = false
-
     private lateinit var linearLayoutManagerOffer: LinearLayoutManager
     lateinit var recyclerOffers: RecyclerView
     private lateinit var offerHorizontalAdapter: OfferHorizontalAdapter
@@ -79,9 +77,14 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
 
         //Logica de Like Button
         val btnLike: ImageButton = binding.likeButton
+
+        viewModel.isLiked.observe(viewLifecycleOwner, Observer { isLiked ->
+            updateLikeButton(btnLike, isLiked)
+        })
+
         btnLike.setOnClickListener(){
-            isLiked = !isLiked
-            updateLikeButton(btnLike,isLiked)
+            val currentLiked = viewModel.isLiked.value ?: false
+            viewModel.setLiked(!currentLiked)
         }
 
         //Logica de Flight Button
