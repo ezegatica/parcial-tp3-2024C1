@@ -48,7 +48,7 @@
                     android:layout_width="167dp"
                     android:layout_height="34dp"
                     android:fontFamily="@font/inter"
-                    android:text="@string/copyright"
+                    android:text="@string/name"
                     android:textColor="@color/light_dark_text"
                     android:background="@null"
                     android:textSize="24sp"
