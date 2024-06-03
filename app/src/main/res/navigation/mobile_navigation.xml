@@ -13,6 +13,21 @@
         <action
             android:id="@+id/action_navigation_search_result_to_navigation_search_result_detail"
             app:destination="@id/navigation_search_result_detail" />
+        <argument
+            android:name="from"
+            app:argType="string" />
+        <argument
+            android:name="to"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="passengers"
+            app:argType="string" />
+        <argument
+            android:name="classes"
+            app:argType="string" />
     </fragment>
 
     <fragment

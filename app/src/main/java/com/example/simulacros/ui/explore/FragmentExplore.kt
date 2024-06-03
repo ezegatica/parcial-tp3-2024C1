@@ -4,22 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.simulacros.adapters.OfferAdapter
+import com.example.simulacros.R
+import com.example.simulacros.adapters.OfferHorizontalAdapter
+import com.example.simulacros.adapters.TrendingDestinationAdapter
 import com.example.simulacros.databinding.FragmentExploreBinding
 import com.example.simulacros.domain.model.Offer
-import com.example.simulacros.listener.OnOfferItemClickedListener
-import androidx.lifecycle.Observer
-import com.example.simulacros.R
-import com.example.simulacros.adapters.TrendingDestinationAdapter
 import com.example.simulacros.domain.model.TrendingDestination
+import com.example.simulacros.listener.OnOfferItemClickedListener
 import com.example.simulacros.listener.OnTrendingDestinationClickedListener
 
 class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestinationClickedListener {
@@ -27,13 +26,12 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
     private val binding get() = _binding!!
     private val viewModel: ExploreViewModel by viewModels()
 
-    private var isLiked = false
-
     private lateinit var linearLayoutManagerOffer: LinearLayoutManager
-    private lateinit var linearLayoutManagerTrendingDestination: LinearLayoutManager
     lateinit var recyclerOffers: RecyclerView
+    private lateinit var offerHorizontalAdapter: OfferHorizontalAdapter
+
+    private lateinit var linearLayoutManagerTrendingDestination: LinearLayoutManager
     lateinit var recyclerTrendingDestination: RecyclerView
-    private lateinit var offerAdapter: OfferAdapter
     private lateinit var trendingDestinationAdapter: TrendingDestinationAdapter
 
     companion object {
@@ -63,14 +61,15 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
         recyclerOffers.layoutManager = linearLayoutManagerOffer
 
         viewModel.offers.observe(viewLifecycleOwner, Observer { offers ->
-            offerAdapter = OfferAdapter(offers, this)
-            recyclerOffers.adapter = offerAdapter
+            offerHorizontalAdapter = OfferHorizontalAdapter(offers, this)
+            recyclerOffers.adapter = offerHorizontalAdapter
         })
 
         //Recycler Trending Destination
         recyclerTrendingDestination = binding.recyclerTrendingDestinations
         recyclerTrendingDestination.setHasFixedSize(true)
         recyclerTrendingDestination.layoutManager = linearLayoutManagerTrendingDestination
+
         viewModel.trendingDestinations.observe(viewLifecycleOwner, Observer { trendingDestination ->
             trendingDestinationAdapter = TrendingDestinationAdapter(trendingDestination,this)
             recyclerTrendingDestination.adapter = trendingDestinationAdapter
@@ -78,13 +77,14 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
 
         //Logica de Like Button
         val btnLike: ImageButton = binding.likeButton
+
+        viewModel.isLiked.observe(viewLifecycleOwner, Observer { isLiked ->
+            updateLikeButton(btnLike, isLiked)
+        })
+
         btnLike.setOnClickListener(){
-            isLiked = !isLiked
-            if(isLiked){
-                btnLike.setImageResource(R.drawable.liked_logo)
-            }else{
-                btnLike.setImageResource(R.drawable.like_logo)
-            }
+            val currentLiked = viewModel.isLiked.value ?: false
+            viewModel.setLiked(!currentLiked)
         }
 
         //Logica de Flight Button
@@ -105,6 +105,14 @@ class FragmentExplore : Fragment(), OnOfferItemClickedListener, OnTrendingDestin
 
     override fun onTrendingDestinationItemDetail(trendingDestination: TrendingDestination) {
         //NO HACE NADA
+    }
+
+    private fun updateLikeButton(button: ImageButton, isLiked: Boolean) {
+        if (isLiked) {
+            button.setImageResource(R.drawable.liked_logo)
+        } else {
+            button.setImageResource(R.drawable.like_logo)
+        }
     }
 
 }

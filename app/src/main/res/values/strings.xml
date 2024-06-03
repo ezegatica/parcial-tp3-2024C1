@@ -33,5 +33,21 @@
     <string name="fromCardText">FROM</string>
     <string name="limited_time_offer">Limited time offer!</string>
 
+    <string name="from_departures">From</string>
+    <string name="select_departure">Select Departure</string>
+    <string name="to_arrival">To</string>
+    <string name="select_arrival">Select Arrival</string>
+    <string name="departure_date">Departure Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="passengers_title">Passengers</string>
+    <string name="class_title">Class</string>
+    <string name="search_button">Search</string>
+    <string name="limited_offer">LIMITED OFFER!</string>
+    <string name="one_way_button">One way</string>
+    <string name="round_trip_button">Round trip</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="referral_code">Referral Code</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
 
 </resources>

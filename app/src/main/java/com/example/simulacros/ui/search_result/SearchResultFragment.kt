@@ -9,19 +9,22 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavArgs
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.simulacros.adapters.FlightListAdapter
 import com.example.simulacros.databinding.FragmentSearchResultBinding
 import com.example.simulacros.domain.model.Flight
 import com.example.simulacros.listener.OnFlightItemClickedListener
+import com.example.simulacros.ui.search.FragmentSearch
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchResultFragment : Fragment(), OnFlightItemClickedListener {
 
     private var _binding: FragmentSearchResultBinding? = null
-
+    private val args : SearchResultFragmentArgs by navArgs()
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,6 +35,13 @@ class SearchResultFragment : Fragment(), OnFlightItemClickedListener {
         val viewModel = ViewModelProvider(this).get(SearchResultViewModel::class.java)
 
         _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
+
+        //Recibimos los argumentos, en principio no se utilizan
+        val flightFrom = args.from
+        val flightTo = args.to
+        val flightDate = args.date
+        val flightClass = args.classes
+        val flightPassengers = args.passengers
 
         val root: View = binding.root
         val recFlight = binding.recFlights

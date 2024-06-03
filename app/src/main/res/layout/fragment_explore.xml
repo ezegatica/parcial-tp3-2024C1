@@ -25,13 +25,13 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/offer_constraintLayout"
-                android:layout_width="392dp"
+                android:layout_width="match_parent"
                 android:layout_height="142dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerOffer_constraintLayout">
+                app:layout_constraintTop_toBottomOf="@+id/trending_destination_constraintLayout">
 
                 <TextView
                     android:id="@+id/offer_title"
@@ -40,7 +40,7 @@
                     android:layout_marginBottom="4dp"
                     android:fontFamily="@font/inter"
                     android:text="@string/title_offers"
-                    android:textColor="@color/primaryColor"
+                    android:textColor="@color/primaryBlack"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/recycler_offers"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_offers"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="match_parent"
                     android:layout_marginTop="36dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -59,7 +59,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/recyclerOffer_constraintLayout"
+                android:id="@+id/trending_destination_constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="208dp"
                 app:layout_constraintBottom_toTopOf="@+id/offer_constraintLayout"
@@ -100,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
                     android:text="@string/title_trending_destinations"
-                    android:textColor="@color/primaryColor"
+                    android:textColor="@color/primaryBlack"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/recycler_trending_destinations"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
                 android:layout_width="53dp"
                 android:layout_height="76dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerOffer_constraintLayout"
+                app:layout_constraintBottom_toTopOf="@+id/trending_destination_constraintLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter"
                     android:text="@string/button_flight"
-                    android:textColor="@color/primaryColor"
+                    android:textColor="@color/primaryBlack"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.508"
