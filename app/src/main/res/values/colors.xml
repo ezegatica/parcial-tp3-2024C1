@@ -25,9 +25,8 @@
     <color name='destination_code_text'>#4D5760</color>
     <color name='see_all_text'>#1262AE</color>
     <color name='opacity_20_cardview'>#33000000</color>
-
     <color name="primaryBlack">#FF000000</color>
-
+    <color name="primaryBlue">#FF1B72C0</color>
     <color name="buttonPillOn">#1262AE</color>
     <color name="buttonPillOff">#F3F5F9</color>
     <color name="colorTextOff">#9EAAB6</color>

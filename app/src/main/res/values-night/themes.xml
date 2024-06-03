@@ -15,4 +15,5 @@
         <item name="customBarBackgroundColor">@color/black</item>
     </style>
     <color name="primaryBlack">#FFFFFFFF</color>
+    <color name="primaryBlue">#FF03DAC5</color>
 </resources>
