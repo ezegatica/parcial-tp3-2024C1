@@ -25,6 +25,7 @@ import com.example.simulacros.adapters.OfferHorizontalAdapter
 import com.example.simulacros.databinding.FragmentSearchBinding
 import com.example.simulacros.domain.model.Offer
 import com.example.simulacros.listener.OnOfferItemClickedListener
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
 
@@ -43,8 +44,8 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
     private lateinit var textDate : EditText
     private lateinit var selectDate : TextInputEditText
 
-    private var selectedPassenger : String = ""
-    private var selectedClass : String = ""
+    private var selectedPassenger : String = "1 Adult"
+    private var selectedClass : String = "Economy"
 
     companion object {
         fun newInstance() = FragmentSearch()
@@ -62,8 +63,16 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
 
         val btnSearch: Button = binding.searchButton
         btnSearch.setOnClickListener() {
-            if (textDeparture.text.isNullOrEmpty() || textArrival.text.isNullOrEmpty() || textDate.text.isNullOrEmpty() || selectedPassenger.isEmpty() || selectedClass.isEmpty()){
-                Toast.makeText(context, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show()
+            if (textDeparture.text.isNullOrEmpty()) {
+                Toast.makeText(context, "Por favor complete el campo From", Toast.LENGTH_SHORT).show()
+            }else if(textArrival.text.isNullOrEmpty()){
+                Toast.makeText(context, "Por favor complete el campo To", Toast.LENGTH_SHORT).show()
+            }else if(textDate.text.isNullOrEmpty() ) {
+                Toast.makeText(context, "Por favor complete el la fecha del vuelo", Toast.LENGTH_SHORT).show()
+            }else if(selectedPassenger.isEmpty()) {
+                Toast.makeText(context, "Por favor complete el numero de pasajeros", Toast.LENGTH_SHORT).show()
+            }else if(selectedClass.isEmpty()) {
+                Toast.makeText(context, "Por favor complete la clase del vuelo", Toast.LENGTH_SHORT).show()
             }else{
                 view?.findNavController()?.navigate(FragmentSearchDirections.actionFragmentSearchToNavigationHome(
                     textDeparture.text.toString(),

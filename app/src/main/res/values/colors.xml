@@ -26,7 +26,7 @@
     <color name='see_all_text'>#1262AE</color>
     <color name='opacity_20_cardview'>#33000000</color>
 
-    <color name="primaryColor">#FF000000</color>
+    <color name="primaryBlack">#FF000000</color>
 
     <color name="buttonPillOn">#1262AE</color>
     <color name="buttonPillOff">#F3F5F9</color>
