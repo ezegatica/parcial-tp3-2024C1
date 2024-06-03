@@ -24,6 +24,5 @@ class SearchViewModel : ViewModel()  {
 
     val passengers: LiveData<List<String>> = _passengers
     val classes: LiveData<List<String>> = _classes
-
     val offers: LiveData<List<Offer>> = _offers
 }

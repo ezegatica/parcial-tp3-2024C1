@@ -2,9 +2,7 @@ package com.example.simulacros.ui.search
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.text.Editable
 import android.text.InputType
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +23,6 @@ import com.example.simulacros.adapters.OfferHorizontalAdapter
 import com.example.simulacros.databinding.FragmentSearchBinding
 import com.example.simulacros.domain.model.Offer
 import com.example.simulacros.listener.OnOfferItemClickedListener
-import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
 
@@ -110,10 +107,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             showDatePickerDialog()
         }
 
-        setupTextInput(textDeparture, "Select Departure")
-        setupTextInput(textArrival, "Select Arrival")
-        setupTextInput(textDate, "Select Date")
-
         viewModel.passengers.observe(viewLifecycleOwner, Observer { passengers -> passengers?.let {
             val adapterPassengers = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, passengers)
             val autoCompletePassengers: AutoCompleteTextView = view.findViewById(R.id.autoCompletePassengers)
@@ -149,30 +142,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
         }, year, month, dayOfMonth)
 
         datePickerDialog.show()
-    }
-
-    private fun setupTextInput(textInput: EditText, hint: String) {
-        textInput.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus && textInput.text.toString() == hint) {
-                textInput.setText("")
-            }
-        }
-
-        textInput.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No hacer nada
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No hacer nada
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                if (!textInput.hasFocus() && s.isNullOrEmpty()) {
-                    textInput.setText(hint)
-                }
-            }
-        })
     }
 
     override fun onOfferItemDetail(offer: Offer) {

@@ -66,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/from_departures"
                 android:textColorHint="@color/primaryBlack"
+                app:placeholderText="@string/select_departure"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -79,7 +80,6 @@
                     android:drawableStart="@drawable/departure"
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/select_departure"
                     android:textColor="@color/colorTextOff" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,6 +92,7 @@
                 android:fontFamily="@font/roboto"
                 android:hint="@string/to_arrival"
                 android:textColorHint="@color/primaryBlack"
+                app:placeholderText="@string/select_arrival"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
@@ -105,7 +106,6 @@
                     android:drawableStart="@drawable/arrival"
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/roboto"
-                    android:text="@string/select_arrival"
                     android:textColor="@color/colorTextOff" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -117,6 +117,7 @@
                 android:layout_marginTop="20dp"
                 android:hint="@string/departure_date"
                 android:textColorHint="@color/primaryBlack"
+                app:placeholderText="@string/select_date"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -131,7 +132,6 @@
                     android:fontFamily="@font/roboto"
                     android:onClick="showDatePickerDialog"
                     android:inputType="date"
-                    android:text="@string/select_date"
                     android:textColor="@color/colorTextOff"
                     android:focusableInTouchMode="false" />
             </com.google.android.material.textfield.TextInputLayout>
