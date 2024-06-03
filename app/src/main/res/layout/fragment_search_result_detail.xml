@@ -7,204 +7,208 @@
     android:layout_height="match_parent"
     tools:context=".ui.search_result_detail.SearchResultDetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-61dp"
-        tools:layout_editor_absoluteY="-31dp">
 
-        <TextView
-            android:id="@+id/srd_title"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/inter"
-            android:text="Boracay"
-            android:textColor="@color/light_dark_text"
-            android:textSize="24sp"
-            android:textStyle="bold"
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022" />
-
-        <TextView
-            android:id="@+id/srd_price"
-            android:layout_width="84dp"
-            android:layout_height="36dp"
-            android:fontFamily="@font/inter"
-            android:text="$349"
-            android:textAlignment="textEnd"
-            android:textColor="@color/light_dark_text"
-            android:textSize="28sp"
-            android:textStyle="bold"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.925"
-            app:layout_constraintStart_toEndOf="@+id/srd_title"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.035" />
-
-        <TextView
-            android:id="@+id/srd_subtitle"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/inter"
-            android:text="Philippines"
-            android:textColor="@color/grey_text"
-            android:textSize="16sp"
-            android:textStyle="bold"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.065" />
-
-        <TextView
-            android:id="@+id/srd_overview_title"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/inter"
-            android:text="Overview"
-            android:textColor="@color/light_dark_text"
-            android:textSize="16sp"
-            android:textStyle="bold"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.125" />
-
-        <TextView
-            android:id="@+id/srd_photos_title"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/inter"
-            android:text="Photos"
-            android:textColor="@color/light_dark_text"
-            android:textSize="16sp"
-            android:textStyle="bold"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.433" />
-
-        <TextView
-            android:id="@+id/srd_overview_text"
-            android:layout_width="344dp"
-            android:layout_height="202dp"
-            android:fontFamily="@font/inter"
-            android:text="Spend 5 days and 4 nights in one of the best islands in the world! Bask in the sun while walking in the white sand beach and enjoy the night partying at the popular seaside bars."
-            android:textColor="@color/light_dark_text"
-            android:textSize="14sp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.306"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.214" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="52dp"
-            android:layout_height="22dp"
-            android:background="@drawable/rounded_square_destination_code"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.323"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.028">
-
-            <TextView
-                android:id="@+id/trend_dest_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter"
-                android:gravity="center"
-                android:text="5D4N"
-                android:textColor="@color/destination_code_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.538"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:id="@+id/ivDogDetail1"
-            android:layout_width="147dp"
-            android:layout_height="121dp"
-            android:src="@drawable/dog_intro"
+            android:id="@+id/image_search_resault_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:src="@drawable/back_card_view"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.065"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.537" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <ImageView
-            android:id="@+id/ivDogDetail2"
-            android:layout_width="147dp"
-            android:layout_height="121dp"
-            android:src="@drawable/dog_intro"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.065"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.719" />
-
-        <ImageView
-            android:id="@+id/ivDogDetail3"
-            android:layout_width="147dp"
-            android:layout_height="121dp"
-            android:src="@drawable/dog_intro"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.658"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.719" />
-
-        <ImageView
-            android:id="@+id/ivDogDetail4"
-            android:layout_width="147dp"
-            android:layout_height="121dp"
-            android:src="@drawable/dog_intro"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.662"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.537" />
-
-        <Button
-            android:id="@+id/button2"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_search_result_detail"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginBottom="96dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/orange_primary"
-            android:text="Book now"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.944"
-            tools:layout_editor_absoluteX="0dp" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="35dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/card_constraint1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="15dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/text_view_title_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter"
+                    android:text="Boracay"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/philippines"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_title_detail" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="52dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/rounded_square_destination_code"
+                    app:layout_constraintStart_toEndOf="@+id/text_view_title_detail"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/_5d4n"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:text="@string/_345"
+                    android:textColor="@color/primaryBlack"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_title_detail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_constraint2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/card_constraint1"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_view_card_detail_overview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/overview"
+                        android:textColor="@color/primaryBlack"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/text_view_card_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/inter_extralight"
+                        android:text="@string/card_detail_overview"
+                        android:textColor="@color/primaryBlack"
+                        android:textSize="15sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_card_detail_overview" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_constraint3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/card_constraint2"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:id="@+id/text_view_card_detail_photos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:text="@string/result_details_photos"
+                        android:textColor="@color/primaryBlack"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/photo_result_detail1"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+
+                        android:src="@drawable/carusel_photo1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_card_detail_photos"/>
+
+                    <ImageView
+                        android:id="@+id/photo_result_detail2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/carusel_photo2"
+                        app:layout_constraintStart_toEndOf="@+id/photo_result_detail1"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_card_detail_photos"
+                        android:layout_marginStart="10dp"
+                        />
+                    <ImageView
+                        android:id="@+id/photo_result_detail3"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/carusel_photo3"
+                        app:layout_constraintStart_toEndOf="@+id/photo_result_detail2"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_card_detail_photos"
+                        android:layout_marginStart="10dp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/orange_primary"
+                    android:fontFamily="@font/inter"
+                    android:text="@string/book_now"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/card_constraint3"
+                    tools:layout_editor_absoluteX="15dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

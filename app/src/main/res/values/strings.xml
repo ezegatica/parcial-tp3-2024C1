@@ -19,7 +19,6 @@
     <string name="preference_night_mode_key">night_mode_preference</string>
     <string name="version">App version 1.0.0</string>
     <string name="mock_api_base_url">https://d9811bf4-5e67-4a8c-bdcf-603cbbfc0275.mock.pstmn.io/</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_flight">Flight</string>
     <string name="button_search">Search</string>
@@ -31,7 +30,6 @@
     <string name="priceParis">$1299</string>
     <string name="fromCardText">FROM</string>
     <string name="limited_time_offer">Limited time offer!</string>
-
     <string name="from_departures">From</string>
     <string name="select_departure">Select Departure</string>
     <string name="to_arrival">To</string>
@@ -50,6 +48,11 @@
     <string name="logout">Logout</string>
     <string name="name">Macy Johnson</string>
     <string name="welcome_message">Hello</string>
-
-
+    <string name="card_detail_overview">Spend 5 days and 4 nights in one of the best islands in the world! Bask in the sun while walking in the white sand beach and enjoy the night partying at the popular seaside bars.</string>
+    <string name="result_details_photos">Photos</string>
+    <string name="philippines">Philippines</string>
+    <string name="_5d4n">5D4N</string>
+    <string name="_345">$345</string>
+    <string name="overview">Overview</string>
+    <string name="book_now">Book now</string>
 </resources>

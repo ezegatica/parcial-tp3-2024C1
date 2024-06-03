@@ -26,6 +26,7 @@
                 android:id="@+id/card_airline_logo"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
+                android:scaleType="centerInside"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +37,11 @@
                 android:id="@+id/card_airline_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="airline"
-                android:layout_marginTop="24dp"
                 android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/inter"
+                android:text="airline"
+                android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/card_airline_logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,10 +60,11 @@
                 android:id="@+id/card_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="duration"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="26dp"
+                android:fontFamily="@font/inter"
+                android:text="duration"
+                android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -78,22 +81,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/inter"
                 android:text="EZE"
                 android:textColor="@color/primaryBlue"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/card_airport_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/inter"
                 android:text="Ezeiza Ar"
                 android:textSize="15sp"
-                app:layout_constraintTop_toBottomOf="@+id/card_airport_id"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_airport_id" />
             <ImageView
                 android:id="@+id/card_travel_logo"
                 android:layout_width="wrap_content"
@@ -109,18 +115,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/inter"
                 android:text="LAX"
                 android:textColor="@color/primaryBlue"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/card_airport_name_arrival"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="@font/inter"
                 android:text="Los Angeles"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -143,8 +152,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.017"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/card_sofa" />
@@ -154,12 +161,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/inter"
                 android:text="Business Class"
                 android:textColor="@color/black"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.004"
                 app:layout_constraintStart_toEndOf="@+id/card_sofa_logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -167,27 +173,27 @@
                 android:id="@+id/card_flight_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/inter"
                 android:text="$1420"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/inter"
                 android:text="From"
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.666" />
+                app:layout_constraintEnd_toStartOf="@+id/card_flight_price"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -197,11 +203,12 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
             android:backgroundTint="@color/orange_primary"
+            android:fontFamily="@font/inter"
             android:text="View Details"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

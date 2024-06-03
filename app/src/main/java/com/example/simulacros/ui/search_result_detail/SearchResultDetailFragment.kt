@@ -1,13 +1,11 @@
 package com.example.simulacros.ui.search_result_detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.example.simulacros.R
 import com.example.simulacros.databinding.FragmentSearchResultDetailBinding
 
 class SearchResultDetailFragment : Fragment() {
@@ -29,14 +27,6 @@ class SearchResultDetailFragment : Fragment() {
         _binding = FragmentSearchResultDetailBinding.inflate(inflater, container, false)
         val root: View = binding.root;
 
-        SearchResultDetailFragmentArgs.fromBundle(requireArguments()).flight.let {
-            Glide.with(requireContext())
-                .load(it.airlineLogo)
-                .centerCrop()
-                .placeholder(R.drawable.progress_animation)
-                .into(binding.ivDogDetail1);
-
-        }
 
         return root
     }
