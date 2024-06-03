@@ -27,9 +27,9 @@ class FlightListAdapter(
         val flight = flightList[position]
         holder.setAirline(flight.airline)
         holder.setTotalDuration((flight.totalDuration/60).toString() + " h " + flight.totalDuration%60 + " m")
-        holder.setDepartureAirportName(flight.departureAirportName)
+        holder.setDepartureAirportName(getFirstWord(flight.departureAirportName))
         holder.setDepartureAirportId(flight.departureAirportId)
-        holder.setArrivalAirportName(flight.arrivalAirportName)
+        holder.setArrivalAirportName(getFirstWord(flight.arrivalAirportName))
         holder.setArrivalAirportId(flight.arrivalAirportId)
         holder.setPrice(flight.price)
 
@@ -42,5 +42,8 @@ class FlightListAdapter(
             onItemClick.onFlightItemDetail(flight)
         }
 
+    }
+    fun getFirstWord(text: String): String {
+        return text.split(" ").firstOrNull() ?: ""
     }
 }
