@@ -265,7 +265,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="75dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/avatar2" />
+                android:src="@drawable/avatar" />
         </androidx.cardview.widget.CardView>
 
         <ImageView
