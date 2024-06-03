@@ -32,7 +32,7 @@
                     android:layout_height="34dp"
                     android:fontFamily="@font/inter"
                     android:text="@string/name"
-                    android:textColor="@color/light_dark_text"
+                    android:textColor="@color/primaryBlack"
 
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -43,73 +43,101 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.064" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/srd_title_edit"
-                    android:layout_width="167dp"
-                    android:layout_height="34dp"
-                    android:fontFamily="@font/inter"
-                    android:text="@string/name"
-                    android:textColor="@color/light_dark_text"
-                    android:background="@null"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.065"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.064" />
+                    app:layout_constraintTop_toBottomOf="@+id/srd_title">
 
-                <TextView
+                    <TextView
 
-                    android:id="@+id/srd_subtitle"
-                    android:layout_width="168dp"
-                    android:layout_height="23dp"
-                    android:fontFamily="@font/inter"
-                    android:text="Baguio, Philippines"
-                    android:textColor="@color/grey_text"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
+                        android:id="@+id/srd_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
+                        android:gravity="start|center_vertical"
+                        android:text="Baguio, Philippines"
 
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.065"
+                        android:textColor="@color/grey_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:id="@+id/srd_subtitle_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:fontFamily="@font/inter"
+                        android:inputType="text"
+                        android:text="Baguio, Philippines"
+                        android:textColor="@color/grey_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.11" />
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-                <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textInputEditTextDesc"
+                        android:layout_width="366dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/inter"
+                        android:inputType="text|textMultiLine"
+                        android:text="I like the beach, mountains, forest and everything about nature! :)"
+                        android:textAlignment="textStart"
+                        android:textSize="14sp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                    android:id="@+id/srd_subtitle_edit"
-                    android:layout_width="168dp"
-                    android:layout_height="23dp"
-                    android:fontFamily="@font/inter"
-                    android:text="Baguio, Philippines"
-                    android:textColor="@color/grey_text"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@null"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.065"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.11" />
+                    <TextView
+                        android:id="@+id/textViewDesc"
+                        android:layout_width="366dp"
+                        android:layout_height="64dp"
+                        android:fontFamily="@font/inter"
+                        android:gravity="center_vertical"
+                        android:inputType="text|textMultiLine"
+                        android:text="I like the beach, mountains, forest and everything about nature! :)"
+                        android:textSize="14sp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <View
                     android:id="@+id/divider2"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="32dp"
                     android:background="?android:attr/listDivider"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputEditTextDesc" />
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
 
                 <Button
                     android:id="@+id/button3"
@@ -125,10 +153,10 @@
                     android:text="@string/payment_details"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryBlack"
                     android:textSize="20sp"
                     app:icon="@drawable/payment_icon"
-                    app:iconTint="@color/blue_800"
+                    app:iconTint="@color/primaryBlue"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/divider2"
                     app:strokeColor="#FFFFFF" />
@@ -147,10 +175,10 @@
                     android:text="@string/referral_code"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryBlack"
                     android:textSize="20sp"
                     app:icon="@drawable/referral_icon"
-                    app:iconTint="@color/blue_800"
+                    app:iconTint="@color/primaryBlue"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/divider2"
                     app:strokeColor="#FFFFFF" />
@@ -172,6 +200,7 @@
                         android:text="NEW"
                         android:textColor="@color/white"
                         android:textColorLink="@color/white" />
+
                 </androidx.cardview.widget.CardView>
 
                 <Button
@@ -188,10 +217,10 @@
                     android:text="@string/settings"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryBlack"
                     android:textSize="20sp"
                     app:icon="@drawable/settings_icon"
-                    app:iconTint="@color/blue_800"
+                    app:iconTint="@color/primaryBlue"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/divider2"
                     app:strokeColor="#FFFFFF" />
@@ -210,43 +239,13 @@
                     android:text="@string/logout"
                     android:textAllCaps="false"
                     android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryBlack"
                     android:textSize="20sp"
                     app:icon="@drawable/logout_icon"
-                    app:iconTint="@color/blue_800"
+                    app:iconTint="@color/primaryBlue"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/divider2"
                     app:strokeColor="#FFFFFF" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textInputEditTextDesc"
-                    android:layout_width="366dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/inter"
-                    android:inputType="text|textMultiLine"
-                    android:text="I like the beach, mountains, forest and everything about nature! :)"
-                    android:textAlignment="textStart"
-                    android:textSize="14sp"
-                    android:visibility="invisible"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/srd_subtitle" />
-
-                <TextView
-                    android:id="@+id/textViewDesc"
-                    android:layout_width="366dp"
-                    android:layout_height="64dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/inter"
-                    android:gravity="center_vertical"
-                    android:inputType="text|textMultiLine"
-                    android:text="I like the beach, mountains, forest and everything about nature! :)"
-                    android:textSize="14sp"
-                    android:visibility="visible"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/srd_subtitle" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -277,23 +276,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/edit_button"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="12dp"
             android:backgroundTint="@color/white"
-            android:editable="true"
             android:gravity="center"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="Button"
             app:cornerRadius="90dp"
             app:icon="@drawable/edit_icon"
-            app:iconGravity="start|end"
+            app:iconGravity="textStart"
             app:iconPadding="0dp"
-            app:iconSize="36dp"
+            app:iconSize="20dp"
             app:iconTint="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/cardView2"
             app:layout_constraintEnd_toEndOf="parent" />

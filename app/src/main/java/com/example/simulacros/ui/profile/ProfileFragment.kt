@@ -43,10 +43,6 @@ class ProfileFragment : Fragment() {
         viewModel.descriptionText.observe(viewLifecycleOwner) { text ->
             binding.textViewDesc.text = text
         }
-        viewModel.titleText.observe(viewLifecycleOwner) { text ->
-            binding.srdTitle.text = text
-            binding.srdTitleEdit.setText(text)
-        }
         viewModel.subtitleText.observe(viewLifecycleOwner) { text ->
             binding.srdSubtitle.text = text
             binding.srdSubtitleEdit.setText(text)
@@ -67,19 +63,14 @@ class ProfileFragment : Fragment() {
         binding.textViewDesc.visibility = if (isEditing) View.VISIBLE else View.INVISIBLE
         binding.textInputEditTextDesc.visibility = if (isEditing) View.INVISIBLE else View.VISIBLE
 
-        // Title fields
-        binding.srdTitle.visibility = if (isEditing) View.VISIBLE else View.INVISIBLE
-        binding.srdTitleEdit.visibility = if (isEditing) View.INVISIBLE else View.VISIBLE
-
         // Subtitle fields
         binding.srdSubtitle.visibility = if (isEditing) View.VISIBLE else View.INVISIBLE
         binding.srdSubtitleEdit.visibility = if (isEditing) View.INVISIBLE else View.VISIBLE
 
         if (isEditing) {
             // Save text from EditTexts to LiveData
-            viewModel.descriptionText.value = binding.textInputEditTextDesc.text.toString()
-            viewModel.titleText.value = binding.srdTitleEdit.text.toString()
-            viewModel.subtitleText.value = binding.srdSubtitleEdit.text.toString()
+            viewModel.setDescription(binding.textInputEditTextDesc.text.toString())
+            viewModel.setSubtitle(binding.srdSubtitleEdit.text.toString())
         }
 
     }
