@@ -13,5 +13,17 @@ class SearchViewModel : ViewModel()  {
             Offer("25% discount for Visa credit cards",null, R.drawable.visa)
         )
     }
+
+    private val _passengers = MutableLiveData<List<String>>().apply {
+        value = listOf("1 Adult", "2 Adults", "3 Adults", "4 Adults")
+    }
+
+    private val _classes = MutableLiveData<List<String>>().apply {
+        value = listOf("Economy", "Business", "First")
+    }
+
+    val passengers: LiveData<List<String>> = _passengers
+    val classes: LiveData<List<String>> = _classes
+
     val offers: LiveData<List<Offer>> = _offers
 }

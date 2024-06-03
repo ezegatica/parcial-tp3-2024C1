@@ -3,6 +3,7 @@ package com.example.simulacros.ui.search
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -36,6 +38,14 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
     lateinit var recyclerOffers: RecyclerView
     private lateinit var offerHorizontalAdapter: OfferHorizontalAdapter
 
+    private lateinit var textDeparture : EditText
+    private lateinit var textArrival : EditText
+    private lateinit var textDate : EditText
+    private lateinit var selectDate : TextInputEditText
+
+    private var selectedPassenger : String = ""
+    private var selectedClass : String = ""
+
     companion object {
         fun newInstance() = FragmentSearch()
     }
@@ -52,7 +62,16 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
 
         val btnSearch: Button = binding.searchButton
         btnSearch.setOnClickListener() {
-            view?.findNavController()?.navigate(FragmentSearchDirections.actionFragmentSearchToNavigationHome())
+            if (textDeparture.text.isNullOrEmpty() || textArrival.text.isNullOrEmpty() || textDate.text.isNullOrEmpty() || selectedPassenger.isEmpty() || selectedClass.isEmpty()){
+                Toast.makeText(context, "Por favor complete todos los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                view?.findNavController()?.navigate(FragmentSearchDirections.actionFragmentSearchToNavigationHome(
+                    textDeparture.text.toString(),
+                    textArrival.toString(),
+                    textDate.toString(),
+                    selectedPassenger,
+                    selectedClass))
+            }
         }
 
         return root
@@ -72,11 +91,12 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             recyclerOffers.adapter = offerHorizontalAdapter
         })
 
-        val textDeparture: EditText = binding.textFrom.editText!!
-        val textArrival: EditText = binding.textTo.editText!!
-        val textDate: EditText = binding.selectDate
-        val selectDate: TextInputEditText = binding.selectDate
+        textDeparture = binding.textFrom.editText!!
+        textArrival = binding.textTo.editText!!
+        textDate = binding.selectDate
+        selectDate = binding.selectDate
 
+        selectDate.inputType = InputType.TYPE_NULL
         selectDate.setOnClickListener {
             showDatePickerDialog()
         }
@@ -85,15 +105,26 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
         setupTextInput(textArrival, "Select Arrival")
         setupTextInput(textDate, "Select Date")
 
-        val passengers = listOf("1 Adult", "2 Adults", "3 Adults", "4 Adults")
-        val adapterPassengers = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, passengers)
-        val autoCompletePassengers: AutoCompleteTextView = view.findViewById(R.id.autoCompletePassengers)
-        autoCompletePassengers.setAdapter(adapterPassengers)
+        viewModel.passengers.observe(viewLifecycleOwner, Observer { passengers -> passengers?.let {
+            val adapterPassengers = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, passengers)
+            val autoCompletePassengers: AutoCompleteTextView = view.findViewById(R.id.autoCompletePassengers)
+            autoCompletePassengers.setAdapter(adapterPassengers)
+            autoCompletePassengers.setOnItemClickListener { parent, view, position, id ->
+                selectedPassenger = parent.getItemAtPosition(position) as String
+            }
+        }
 
-        val classes = listOf("Economy", "Business", "First")
-        val adapterClasses = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, classes)
-        val autoCompleteClasses: AutoCompleteTextView = view.findViewById(R.id.autoCompleteClasses)
-        autoCompleteClasses.setAdapter(adapterClasses)
+        })
+
+        viewModel.classes.observe(viewLifecycleOwner, Observer { classes -> classes?.let {
+            val adapterClasses = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, classes)
+            val autoCompleteClasses: AutoCompleteTextView = view.findViewById(R.id.autoCompleteClasses)
+            autoCompleteClasses.setAdapter(adapterClasses)
+            autoCompleteClasses.setOnItemClickListener { parent, view, position, id ->
+                selectedClass = parent.getItemAtPosition(position) as String
+            }
+            }
+        })
 
     }
 

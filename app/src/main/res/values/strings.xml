@@ -43,5 +43,7 @@
     <string name="class_title">Class</string>
     <string name="search_button">Search</string>
     <string name="limited_offer">LIMITED OFFER!</string>
+    <string name="one_way_button">One way</string>
+    <string name="round_trip_button">Round trip</string>
 
 </resources>
