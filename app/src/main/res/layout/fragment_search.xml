@@ -10,7 +10,6 @@
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +31,8 @@
                 android:layout_gravity="center"
                 android:padding="8dp"
                 app:selectionRequired="true"
-                app:singleSelection="true">
+                app:singleSelection="true"
+                >
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonOneWay"
@@ -41,8 +41,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
                     android:text="One way"
-                    app:cornerRadius="20dp" />
+                    app:cornerRadius="20dp"
+                    app:backgroundTint="@color/teal_hover"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonRoundTrip"
@@ -50,9 +52,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
                     android:layout_weight="1"
                     android:text="Round trip"
-                    app:cornerRadius="20dp" />
+                    app:cornerRadius="20dp"
+                    app:backgroundTint="@color/teal_hover" />
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -61,11 +65,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/from_departures"
-                android:textColorHint="@color/light_dark_text"
+                android:textColorHint="@color/primaryBlack"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
-                app:boxCornerRadiusTopStart="8dp">
+                app:boxCornerRadiusTopStart="8dp"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/text_departure"
@@ -86,7 +91,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto"
                 android:hint="@string/to_arrival"
-                android:textColorHint="@color/light_dark_text"
+                android:textColorHint="@color/primaryBlack"
                 app:boxBackgroundMode="outline"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
@@ -111,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/departure_date"
-                android:textColorHint="@color/light_dark_text"
+                android:textColorHint="@color/primaryBlack"
                 app:boxCornerRadiusBottomEnd="8dp"
                 app:boxCornerRadiusBottomStart="8dp"
                 app:boxCornerRadiusTopEnd="8dp"
@@ -125,9 +130,10 @@
                     android:drawablePadding="10dp"
                     android:fontFamily="@font/roboto"
                     android:onClick="showDatePickerDialog"
-                    android:inputType="none"
+                    android:inputType="date"
                     android:text="@string/select_date"
-                    android:textColor="@color/colorTextOff" />
+                    android:textColor="@color/colorTextOff"
+                    android:focusableInTouchMode="false" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -144,8 +150,7 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:hint="@string/passengers_title"
-                    android:textColorHint="@color/light_dark_text"
-                    app:boxCornerRadiusBottomEnd="8dp"
+                    android:textColorHint="@color/primaryBlack"                    app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp">
@@ -169,8 +174,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:hint="@string/class_title"
-                    android:textColorHint="@color/light_dark_text"
-                    app:boxCornerRadiusBottomEnd="8dp"
+                    android:textColorHint="@color/primaryBlack"                    app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp">
@@ -194,7 +198,8 @@
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/orange_primary"
                 android:fontFamily="@font/inter"
-                android:text="@string/search_button" />
+                android:text="@string/search_button"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -214,7 +219,7 @@
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/inter"
                 android:text="@string/title_offers"
-                android:textColor="@color/primaryColor"
+                android:textColor="@color/primaryBlack"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView

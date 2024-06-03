@@ -84,7 +84,6 @@ class MainActivity : AppCompatActivity() {
             //Para ciertas vistas seteo el icono fijo al hamburger
             when (destination.id) {
                 R.id.fragment_explore,
-                R.id.navigation_preference
                 ->{
                     supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburger)
                 }
