@@ -1,4 +1,5 @@
 package com.example.simulacros.ui.search_result
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.simulacros.data.FlightRepository

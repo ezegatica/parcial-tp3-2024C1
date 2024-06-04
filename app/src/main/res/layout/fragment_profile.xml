@@ -52,13 +52,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/srd_title">
 
                     <TextView
-
                         android:id="@+id/srd_subtitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/inter"
                         android:gravity="start|center_vertical"
-                        android:text="Baguio, Philippines"
+                        android:text="@string/profile_pais"
                         android:textColor="@color/grey_text"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -68,14 +67,13 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.textfield.TextInputEditText
-
                         android:id="@+id/srd_subtitle_edit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:fontFamily="@font/inter"
                         android:inputType="text"
-                        android:text="Baguio, Philippines"
+                        android:text="@string/profile_pais"
                         android:textColor="@color/grey_text"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -99,7 +97,7 @@
                         android:layout_height="64dp"
                         android:fontFamily="@font/inter"
                         android:inputType="text|textMultiLine"
-                        android:text="I like the beach, mountains, forest and everything about nature! :)"
+                        android:text="@string/profile_description"
                         android:textAlignment="textStart"
                         android:textSize="14sp"
                         android:visibility="invisible"
@@ -115,7 +113,7 @@
                         android:fontFamily="@font/inter"
                         android:gravity="center_vertical"
                         android:inputType="text|textMultiLine"
-                        android:text="I like the beach, mountains, forest and everything about nature! :)"
+                        android:text="@string/profile_description"
                         android:textSize="14sp"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -195,7 +193,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal|center_vertical"
-                        android:text="NEW"
+                        android:text="@string/label_new_profile"
                         android:textColor="@color/white"
                         android:textColorLink="@color/white" />
 

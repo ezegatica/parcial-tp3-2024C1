@@ -51,7 +51,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
         fun newInstance() = FragmentSearch()
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -82,7 +81,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
                     selectedClass))
             }
         }
-
         return root
     }
 
@@ -112,7 +110,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             showDatePickerDialog()
         }
 
-
         viewModel.passengers.observe(viewLifecycleOwner, Observer { passengers -> passengers?.let {
             val adapterPassengers = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, passengers)
             val autoCompletePassengers: AutoCompleteTextView = view.findViewById(R.id.autoCompletePassengers)
@@ -133,7 +130,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             }
             }
         })
-
         setupToggleButton()
 
     }
@@ -168,7 +164,6 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             }
         }
     }
-
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()

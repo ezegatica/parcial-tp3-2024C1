@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
         binding.navigationView.setupWithNavController(navController)
 
-
         //Configuro Comportamiento segun Fragmento
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
 
@@ -81,7 +80,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_search_result,
                 R.id.navigation_search_result_detail
                 -> {
-
                     binding.contentMainInclude.customToolbar.visibility = MaterialToolbar.VISIBLE
                 }
             }

@@ -59,4 +59,7 @@
     <string name="round_trip_text">Round trip</string>
     <string name="seleccionar_class_passenger">Seleccionar</string>
     <string name="edit_profile">Edit</string>
+    <string name="profile_pais">Baguio, Philippines</string>
+    <string name="profile_description">I like the beach, mountains, forest and everything about nature! :)</string>
+    <string name="label_new_profile">NEW</string>
 </resources>

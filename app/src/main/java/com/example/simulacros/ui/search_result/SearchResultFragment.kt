@@ -9,7 +9,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavArgs
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +16,6 @@ import com.example.simulacros.adapters.FlightListAdapter
 import com.example.simulacros.databinding.FragmentSearchResultBinding
 import com.example.simulacros.domain.model.Flight
 import com.example.simulacros.listener.OnFlightItemClickedListener
-import com.example.simulacros.ui.search.FragmentSearch
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

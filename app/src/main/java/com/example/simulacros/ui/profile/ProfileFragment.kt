@@ -23,9 +23,6 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var textViewDesc : EditText
-    private lateinit var textInputEditTextDesc: TextInputEditText
-
     companion object {
         fun newInstance() = ProfileFragment()
     }
@@ -51,7 +48,6 @@ class ProfileFragment : Fragment() {
         btnEdit.setOnClickListener {
             toggleEditMode()
         }
-
 
         return root
     }

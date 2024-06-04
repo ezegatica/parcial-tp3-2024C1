@@ -11,8 +11,6 @@ class TrendingDestinationHolder (v: View) : RecyclerView.ViewHolder(v){
 
     private var view: View
 
-
-    //var destino: String, var pais: String, var codigo: String, var image: Int
     init {
         this.view = v
     }

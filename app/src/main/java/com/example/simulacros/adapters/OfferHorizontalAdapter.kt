@@ -7,7 +7,6 @@ import com.example.simulacros.domain.model.Offer
 import com.example.simulacros.holders.OfferHolder
 import com.example.simulacros.listener.OnOfferItemClickedListener
 
-
 class OfferHorizontalAdapter(
     private val offerList: List<Offer>,
     private val onItemClick: OnOfferItemClickedListener

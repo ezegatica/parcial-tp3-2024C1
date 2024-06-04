@@ -15,7 +15,6 @@ class FlightListAdapter(
 )
 : RecyclerView.Adapter<FlightHolder>(){
 
-
     override fun getItemCount() = flightList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlightHolder {

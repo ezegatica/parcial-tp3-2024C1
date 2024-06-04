@@ -7,9 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.search_result_detail.SearchResultDetailFragment">
 
-
-
-
         <ImageView
             android:id="@+id/image_search_resault_detail"
             android:layout_width="wrap_content"
@@ -42,7 +39,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginStart="15dp"
                 >
-
 
                 <TextView
                     android:id="@+id/text_view_title_detail"
@@ -189,7 +185,6 @@
                         />
 
 
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
@@ -207,10 +202,6 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         </com.google.android.material.card.MaterialCardView>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
