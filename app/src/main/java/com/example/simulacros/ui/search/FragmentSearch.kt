@@ -44,8 +44,8 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
     private lateinit var textDate : EditText
     private lateinit var selectDate : TextInputEditText
 
-    private var selectedPassenger : String = "1 Adult"
-    private var selectedClass : String = "Economy"
+    private var selectedPassenger : String = ""
+    private var selectedClass : String = ""
 
     companion object {
         fun newInstance() = FragmentSearch()
@@ -135,6 +135,7 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
         })
 
         setupToggleButton()
+
     }
 
     private fun setupToggleButton() {

@@ -89,8 +89,8 @@
 
             <ImageButton
                 android:id="@+id/likeButton"
-                android:layout_width="29dp"
-                android:layout_height="32dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/likeButton"
                 android:scaleX="1.1"

@@ -41,8 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-
-                    android:text="One way"
+                    android:text="@string/one_way_text"
                     app:cornerRadius="20dp"
                     />
 
@@ -53,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
                     android:layout_weight="1"
-                    android:text="Round trip"
+                    android:text="@string/round_trip_text"
                     app:cornerRadius="20dp"
                      />
             </com.google.android.material.button.MaterialButtonToggleGroup>
@@ -149,7 +148,8 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:hint="@string/passengers_title"
-                    android:textColorHint="@color/primaryBlack"                    app:boxCornerRadiusBottomEnd="8dp"
+                    android:textColorHint="@color/primaryBlack"
+                    app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp">
@@ -161,7 +161,7 @@
                         android:drawableStart="@drawable/passengers"
                         android:drawablePadding="6dp"
                         android:inputType="none"
-                        android:text="1 Adult"
+                        android:text="@string/seleccionar_class_passenger"
                         android:textSize="12sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -173,7 +173,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:hint="@string/class_title"
-                    android:textColorHint="@color/primaryBlack"                    app:boxCornerRadiusBottomEnd="8dp"
+                    android:textColorHint="@color/primaryBlack"
+                    app:boxCornerRadiusBottomEnd="8dp"
                     app:boxCornerRadiusBottomStart="8dp"
                     app:boxCornerRadiusTopEnd="8dp"
                     app:boxCornerRadiusTopStart="8dp">
@@ -185,7 +186,7 @@
                         android:drawableStart="@drawable/resource_class"
                         android:drawablePadding="6dp"
                         android:inputType="none"
-                        android:text="Economy"
+                        android:text="@string/seleccionar_class_passenger"
                         android:textSize="12sp" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>

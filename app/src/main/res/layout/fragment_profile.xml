@@ -33,7 +33,6 @@
                     android:fontFamily="@font/inter"
                     android:text="@string/name"
                     android:textColor="@color/primaryBlack"
-
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +59,6 @@
                         android:fontFamily="@font/inter"
                         android:gravity="start|center_vertical"
                         android:text="Baguio, Philippines"
-
                         android:textColor="@color/grey_text"
                         android:textSize="16sp"
                         android:textStyle="bold"
@@ -278,8 +276,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/edit_button"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="@string/edit_profile"
+            android:textAlignment="center"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="12dp"
             android:backgroundTint="@color/white"
@@ -288,7 +288,7 @@
             android:insetBottom="0dp"
             app:cornerRadius="90dp"
             app:icon="@drawable/edit_icon"
-            app:iconGravity="textStart"
+            app:iconGravity="start"
             app:iconPadding="0dp"
             app:iconSize="20dp"
             app:iconTint="@color/black"

@@ -55,4 +55,8 @@
     <string name="_345">$345</string>
     <string name="overview">Overview</string>
     <string name="book_now">Book now</string>
+    <string name="one_way_text">One way</string>
+    <string name="round_trip_text">Round trip</string>
+    <string name="seleccionar_class_passenger">Seleccionar</string>
+    <string name="edit_profile">Edit</string>
 </resources>
