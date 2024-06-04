@@ -41,10 +41,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-                    android:textColor="@color/white"
+
                     android:text="One way"
                     app:cornerRadius="20dp"
-                    app:backgroundTint="@color/teal_hover"/>
+                    />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonRoundTrip"
@@ -52,11 +52,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:textColor="@color/white"
                     android:layout_weight="1"
                     android:text="Round trip"
                     app:cornerRadius="20dp"
-                    app:backgroundTint="@color/teal_hover" />
+                     />
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <com.google.android.material.textfield.TextInputLayout

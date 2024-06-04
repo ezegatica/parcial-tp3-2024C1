@@ -1,5 +1,6 @@
 package com.example.simulacros.ui.search
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.InputType
@@ -23,6 +24,8 @@ import com.example.simulacros.adapters.OfferHorizontalAdapter
 import com.example.simulacros.databinding.FragmentSearchBinding
 import com.example.simulacros.domain.model.Offer
 import com.example.simulacros.listener.OnOfferItemClickedListener
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.internal.ViewUtils.hideKeyboard
 import com.google.android.material.textfield.TextInputEditText
 import java.util.Calendar
 
@@ -83,6 +86,7 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
         return root
     }
 
+    @SuppressLint("RestrictedApi")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -104,8 +108,10 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
 
         selectDate.inputType = InputType.TYPE_NULL
         selectDate.setOnClickListener {
+            hideKeyboard(it)
             showDatePickerDialog()
         }
+
 
         viewModel.passengers.observe(viewLifecycleOwner, Observer { passengers -> passengers?.let {
             val adapterPassengers = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line, passengers)
@@ -128,7 +134,40 @@ class FragmentSearch : Fragment(), OnOfferItemClickedListener {
             }
         })
 
+        setupToggleButton()
     }
+
+    private fun setupToggleButton() {
+        val buttonOneWay: MaterialButton = binding.buttonOneWay
+        val buttonRoundTrip: MaterialButton = binding.buttonRoundTrip
+
+        // Set initial selected state and colors
+        buttonOneWay.isChecked = true
+        buttonOneWay.setBackgroundColor(resources.getColor(R.color.teal_hover))
+        buttonOneWay.setTextColor(resources.getColor(R.color.white))
+        buttonRoundTrip.setBackgroundColor(resources.getColor(R.color.buttonPillOff))
+        buttonRoundTrip.setTextColor(resources.getColor(R.color.colorTextOff))
+
+        binding.buttonToggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                when (checkedId) {
+                    R.id.buttonOneWay -> {
+                        buttonOneWay.setBackgroundColor(resources.getColor(R.color.teal_hover))
+                        buttonOneWay.setTextColor(resources.getColor(R.color.white))
+                        buttonRoundTrip.setBackgroundColor(resources.getColor(R.color.buttonPillOff))
+                        buttonRoundTrip.setTextColor(resources.getColor(R.color.colorTextOff))
+                    }
+                    R.id.buttonRoundTrip -> {
+                        buttonOneWay.setBackgroundColor(resources.getColor(R.color.buttonPillOff))
+                        buttonOneWay.setTextColor(resources.getColor(R.color.colorTextOff))
+                        buttonRoundTrip.setBackgroundColor(resources.getColor(R.color.teal_hover))
+                        buttonRoundTrip.setTextColor(resources.getColor(R.color.white))
+                    }
+                }
+            }
+        }
+    }
+
 
     private fun showDatePickerDialog() {
         val calendar = Calendar.getInstance()
