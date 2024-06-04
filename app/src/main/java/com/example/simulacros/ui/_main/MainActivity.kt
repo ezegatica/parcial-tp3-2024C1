@@ -1,7 +1,10 @@
 package com.example.simulacros.ui._main
 
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
@@ -17,6 +20,7 @@ import com.example.simulacros.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -49,6 +53,9 @@ class MainActivity : AppCompatActivity() {
             topLevelDestinationIds = fragmentsNavigation,
             fallbackOnNavigateUpListener = ::onSupportNavigateUp
         )
+        supportActionBar?.setLogo(R.drawable.logo)
+//        supportActionBar?.setDisplayShowCustomEnabled(true)
+//        supportActionBar?.customView = layoutInflater.inflate(R.layout.action_bar, null)
 
         //Configuro Toolbar
         binding.contentMainInclude.customToolbar.setupWithNavController(navController, appBarConfiguration)
@@ -90,6 +97,26 @@ class MainActivity : AppCompatActivity() {
                 R.id.fragment_explore,
                 ->{
                     supportActionBar?.setHomeAsUpIndicator(R.drawable.hamburger)
+                    supportActionBar?.setDisplayUseLogoEnabled(true)
+                    supportActionBar?.setDisplayShowTitleEnabled(false)
+                }
+            }
+            when (destination.id) {
+                R.id.navigation_preference,
+                ->{
+                    supportActionBar?.setDisplayUseLogoEnabled(true)
+                    supportActionBar?.setDisplayShowTitleEnabled(false)
+                }
+            }
+            when (destination.id) {
+                R.id.navigation_offers,
+                R.id.navigation_profile,
+                R.id.fragmentSearch,
+                R.id.navigation_search_result,
+                R.id.navigation_search_result_detail,
+            -> {
+                    supportActionBar?.setDisplayUseLogoEnabled(false)
+                    supportActionBar?.setDisplayShowTitleEnabled(true)
                 }
             }
         }
