@@ -65,7 +65,7 @@
                 android:layout_height="20dp"
                 android:fontFamily="@font/inter"
                 android:text="Destino"
-                android:textColor="@color/black"
+                android:textColor="@color/primaryBlack"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

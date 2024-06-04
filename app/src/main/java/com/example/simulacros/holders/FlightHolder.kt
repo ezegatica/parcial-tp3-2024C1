@@ -50,6 +50,7 @@ class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     fun setPrice(price: Int) {
         val txt: TextView = view.findViewById(R.id.card_flight_price)
-        txt.text = price.toString()
+        val precio = "$ $price"
+        txt.text = precio
     }
 }
